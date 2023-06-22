@@ -53,7 +53,7 @@ class _AzkarCounterState extends State<AzkarCounter> {
                     reverse: true,
                     // controller: _scrollController,
                     scrollDirection: Axis.horizontal,
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return GestureDetector(
@@ -62,22 +62,24 @@ class _AzkarCounterState extends State<AzkarCounter> {
                               context: context,
                               builder: (BuildContext context) => AlertDialog(
                                     elevation: 10,
-                                    titleTextStyle: TextStyle(),
+                                    titleTextStyle: const TextStyle(),
                                     title: Text(
                                       textAlign: TextAlign.center,
                                         'فضل الذكر '
 
-                                        ,style: GoogleFonts.cairo()),
+                                        ,style: GoogleFonts.cairo(color: Colors.black)),
                                     content: Directionality(
                                       textDirection: TextDirection.rtl,
-                                        child: Text('${azkarContent[index]}',
+                                        child: Text(azkarContent[index],
                                             style: GoogleFonts.cairo())),
                                     actions: <Widget>[
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.pop(context, 'OK');
-                                        },
-                                        child: Text('تـــــم'),
+                                      Center(
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pop(context, 'OK');
+                                          },
+                                          child: Text('تـــــم'),
+                                        ),
                                       ),
                                     ],
                                   ));
@@ -97,7 +99,7 @@ class _AzkarCounterState extends State<AzkarCounter> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text('${azkarDescription[index]}',
+                                  Text(azkarDescription[index],
                                       style: GoogleFonts.cairo(
                                           fontSize: 25, color: Colors.white)),
                                   // Text('" ${azkarContent[index]} "',
@@ -123,108 +125,84 @@ class _AzkarCounterState extends State<AzkarCounter> {
             ],
           ),
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('المسبحةُ الالكترونية',
-                style: GoogleFonts.cairo(
-                    fontSize: 40,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold)),
-            const SizedBox(
-              height: 35,
-            ),
-            Card(
-              elevation: 10,
-              color: Colors.black.withOpacity(0.5),
-              shape: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.amber, width: 5)),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                ),
-                padding: const EdgeInsets.all(25),
-                child: Text('${controller.counter}',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.cairo(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        color: Colors.white)),
+        SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(padding: EdgeInsets.symmetric(vertical: 30)),
+              Text('المسبحةُ الالكترونية',
+                  style: GoogleFonts.cairo(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 35,
               ),
-            ),
-            const SizedBox(
-              height: 35,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.amber)),
-                    onPressed: () {
-                      controller.incrementCount();
-                    },
-                    child: Text('سبٌح',
-                        style: GoogleFonts.cairo(
-                            fontSize: 30, color: Colors.black))),
-                const SizedBox(
-                  width: 30,
+              Card(
+                elevation: 10,
+                color: Colors.black.withOpacity(0.5),
+                shape: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 5)),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                  ),
+                  padding: const EdgeInsets.all(25),
+                  child: Text('${controller.counter}',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.cairo(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.white)),
                 ),
-                ElevatedButton(
-                    style: ButtonStyle(
-                        elevation: const MaterialStatePropertyAll(8),
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.amber.shade100)),
-                    onPressed: () {
-                      controller.restCount();
-                    },
-                    child: Row(
-                      children: [
-                        Text('اعد من الصفر',
-                            style: GoogleFonts.cairo(
-                                fontSize: 30, color: Colors.black)),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        Icon(Icons.restart_alt_rounded)
-                      ],
-                    ))
-              ],
-            ),
-          ],
+              ),
+              const SizedBox(
+                height: 35,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Colors.amber)),
+                      onPressed: () {
+                        controller.incrementCount();
+                      },
+                      child: Text('سبٌح',
+                          style: GoogleFonts.cairo(
+                              fontSize: 30, color: Colors.black))),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          elevation: const MaterialStatePropertyAll(8),
+                          backgroundColor:
+                              MaterialStatePropertyAll(Colors.amber.shade100)),
+                      onPressed: () {
+                        controller.restCount();
+                      },
+                      child: Row(
+                        children: [
+                          Text('اعد من الصفر',
+                              style: GoogleFonts.cairo(
+                                  fontSize: 30, color: Colors.black)),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Icon(Icons.restart_alt_rounded)
+                        ],
+                      ))
+                ],
+              ),
+            ],
+          ),
         )
       ]),
     ));
   }
 }
 
-class DialogExample extends StatelessWidget {
-  const DialogExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () => showDialog<String>(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
-          title: const Text('AlertDialog Title'),
-          content: const Text('AlertDialog description'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () => Navigator.pop(context, 'Cancel'),
-              child: const Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () => Navigator.pop(context, 'OK'),
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      ),
-      child: const Text('Show Dialog'),
-    );
-  }
-}

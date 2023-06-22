@@ -1,56 +1,33 @@
-
+import 'package:azkary/app/shard/azkar_item_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-
-import '../controller/azkar_controller.dart';
-import '../model/all_azkar_modal.dart';
-
+import '../model/sleep_model.dart';
 class SleepAzkar extends StatelessWidget {
   const SleepAzkar({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    final controller =Provider.of<AzkarController>(context);
     return Scaffold(
+        backgroundColor: Colors.black.withOpacity(0.1),
         body: Column(
           children: [
-            controller.isLoading?CircularProgressIndicator():
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم',
-                  style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 20)
-              ),
+            const Padding(
+
+              padding: EdgeInsets.symmetric(vertical: 8.0),
             ),
             Expanded(
               child: ListView.separated(
                   itemBuilder: (context, index) {
-                    final sabahList=controller.test[index];
-                    return Card(
-
-                        elevation: 10,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                  '${sleep[index]}',
-                                  textAlign: TextAlign.start,
-                                  style: GoogleFonts.cairo()
-                              ),
-
-                            ],
-                          ),
-                        )
-                    );
-                  }, separatorBuilder: (context, index) => SizedBox(height: 15,), itemCount: sleep.length),
+                    return AzkerItemBuilder(
+                        azkarTitle: azkarSleep[index],
+                        azkarDes: azkarSleepDes[index],
+                        azkarRepate: azkarSleepRepate[index]);
+                  },
+                  separatorBuilder: (context, index) => const SizedBox(
+                        height: 15,
+                      ),
+                  itemCount: azkarSleep.length),
             )
           ],
-        )
-
-
-
-    );
+        ));
   }
 }

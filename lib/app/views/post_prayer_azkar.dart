@@ -1,57 +1,35 @@
+import 'package:azkary/app/shard/azkar_item_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-
-import '../controller/azkar_controller.dart';
+import '../model/prayer_azkar_model.dart';
 
 class PrayerAzkar extends StatelessWidget {
   const PrayerAzkar({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    final controller =Provider.of<AzkarController>(context);
     return Scaffold(
+        backgroundColor: Colors.black.withOpacity(0.1),
+
         body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم',
-                  style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 20)
-              ),
-            ),
-            Expanded(
-              child: ListView.separated(
-                physics: BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    final sabahList=controller.azkarPostPrayerList[index];
-                    return Card(
-
-                        elevation: 10,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                  '${sabahList.zekr}',
-                                  textAlign: TextAlign.start,
-                                  style: GoogleFonts.cairo()
-                              ),
-                              Text(
-                                '${sabahList.bless}',
-                                textAlign: TextAlign.start,
-                              ),
-                            ],
-                          ),
-                        )
-                    );
-                  }, separatorBuilder: (context, index) => SizedBox(height: 15,), itemCount: controller.azkarPostPrayerList.length),
-            )
-          ],
+      children: [
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 8.0),
+        ),
+        Expanded(
+          child: ListView.separated(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return AzkerItemBuilder(
+                    azkarTitle: azkarPrayer[index],
+                    azkarDes: azkarPrayerDes[index],
+                    azkarRepate: azkarPrayerRepate[index]);
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                    height: 15,
+                  ),
+              itemCount: azkarPrayer.length),
         )
-
-
-
-    );
+      ],
+    ));
   }
 }

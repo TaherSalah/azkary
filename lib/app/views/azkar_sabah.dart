@@ -1,3 +1,4 @@
+import 'package:azkary/app/shard/azkar_item_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -8,69 +9,32 @@ import '../model/sabah_model.dart';
 class AzkarSabah extends StatelessWidget {
   const AzkarSabah({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    final controller =Provider.of<AzkarController>(context);
+    final controller = Provider.of<AzkarController>(context);
     return Scaffold(
+      backgroundColor: Colors.black.withOpacity(0.1),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم',
-              style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 20)
-            ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
           ),
           Expanded(
             child: ListView.separated(
-                physics: BouncingScrollPhysics(),
-
+                physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  final sabahList=controller.azkarSabahList[index];
-                  return Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      SizedBox(
-                        width:double.infinity,
-                        child: Card(
-                          elevation: 10,
-                            child: Padding(
-                              padding: const EdgeInsets.all(33.0),
-                              child: Column(
-                                children: [
-                                  Text(
-                                      azkarSabah[index],
-                                      textAlign: TextAlign.justify,
-                                      style: GoogleFonts.cairo(fontSize: 25)
-                                  ),
-                                  SizedBox(height: 10,),
-                                  Text(
-                                    azkarSabahDes[index],
-
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.andadaPro(),
-                                  ),
-                                ],
-                              ),
-                            )
-                        ),
-                      ),
-                     CircleAvatar(
-                       child:  Text(
-                         '${azkarSabahRepate[index]}',
-                         textAlign: TextAlign.start,
-                       ),
-                     )
-
-                    ],
-                  );
-                }, separatorBuilder: (context, index) => SizedBox(height: 15,), itemCount: controller.azkarMassaList.length),
+                  return AzkerItemBuilder(
+                      azkarTitle: azkarSabah[index],
+                      azkarDes: azkarSabahDes[index],
+                      azkarRepate: azkarSabahRepate[index]);
+                },
+                separatorBuilder: (context, index) => const SizedBox(
+                      height: 15,
+                    ),
+                itemCount: azkarSabah.length),
           )
         ],
-      )
-
-
-
+      ),
     );
   }
 }
