@@ -1,4 +1,4 @@
-import 'package:azkary/app/shard/azkar_item_builder.dart';
+import 'package:azkary/app/shard/widgets/azkar_item_builder.dart';
 import 'package:flutter/material.dart';
 import '../model/prayer_azkar_model.dart';
 

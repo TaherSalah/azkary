@@ -1,7 +1,7 @@
 import 'package:azkary/app/model/other_azkar_model.dart';
 import 'package:flutter/material.dart';
 
-import '../shard/azkar_item_builder.dart';
+import '../shard/widgets/azkar_item_builder.dart';
 
 class AzkarOthers extends StatelessWidget {
   const AzkarOthers({super.key});

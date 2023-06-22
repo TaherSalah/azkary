@@ -50,11 +50,11 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
         ),
         CircleAvatar(
           backgroundColor: Colors.amber,
-
           child: Text(
             '${widget.azkarRepate}',
             textAlign: TextAlign.start,
-            style: GoogleFonts.cairo(color: Colors.black,fontWeight: FontWeight.w400),
+            style: GoogleFonts.cairo(
+                color: Colors.black, fontWeight: FontWeight.w400),
           ),
         )
       ],
