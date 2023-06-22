@@ -1,6 +1,7 @@
 import 'package:azkary/app/shard/widgets/rate_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:marquee/marquee.dart';
 
 import 'my_divider.dart';
 
@@ -12,20 +13,20 @@ class AboutItemBuilder extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
         Center(
-          child: Container(
-            height: 130,
+          child: SizedBox(
+            height: 150,
             width: 150,
-            child: Image.asset('assets/images/perLogo.png'),
+            child: Image.asset('assets/images/azkary_logo.png',height: 150,fit: BoxFit.cover,),
           ),
         ),
-        Text(
-          'اذكار المسلم اليوميةُ',
-          style:
-          GoogleFonts.cairo(fontWeight: FontWeight.bold, fontSize: 16),
-        ),
+        // Text(
+        //   'اذكار المسلم اليوميةُ',
+        //   style:
+        //   GoogleFonts.cairo(fontWeight: FontWeight.bold, fontSize: 16),
+        // ),
         const SizedBox(
           height: 10,
         ),
@@ -60,7 +61,7 @@ class AboutItemBuilder extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         'عن البرنامج',
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: GoogleFonts.cairo(fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                     ),
                     Expanded(child: myDivider()),
@@ -86,7 +87,7 @@ class AboutItemBuilder extends StatelessWidget {
                       padding: const EdgeInsets.all(7.0),
                       child: Text(
                         'تقييم التطبيق',
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: GoogleFonts.cairo(fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                     ),
                     Expanded(child: myDivider()),
@@ -100,27 +101,46 @@ class AboutItemBuilder extends StatelessWidget {
                       padding: const EdgeInsets.all(7.0),
                       child: Text(
                         'صدقة جارية',
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: GoogleFonts.cairo(fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                     ),
                     Expanded(child: myDivider()),
                   ],
                 ),
-                Container(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 18.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 18.0),
+                  child: Text(
+                    textAlign: TextAlign.justify,
+                    selectionColor: Colors.amber,
+                    'برنامج أذكار المسلم اليوميةُ هو صدقة جارية لكل اموات المسلمبن ولكل من شارك هذا التطبيق لوجه الله تعالي  .',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontSize: 16.5, fontWeight: FontWeight.normal),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Expanded(child: myDivider()),
+                    Padding(
+                      padding: const EdgeInsets.all(7.0),
                       child: Text(
-                        textAlign: TextAlign.justify,
-                        selectionColor: Colors.amber,
-                        'برنامج أذكار المسلم اليوميةُ هو صدقة جارية علي روح المغور له الاستاذ محمد ربيع ولكل اموات المسلمبن ولكل من شارك هذا التطبيق لكل من يحبة .',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontSize: 16.5, fontWeight: FontWeight.normal),
+                        'تطوير',
+                        style: GoogleFonts.cairo(fontWeight: FontWeight.bold, fontSize: 16),
                       ),
-                    )),
+                    ),
+                    Expanded(child: myDivider()),
+                  ],
+                ),
+                Center(
+                  child: SizedBox(
+                    height: 150,
+                    width: 150,
+                    child: Image.asset('assets/images/perLogo.png',height: 150,fit: BoxFit.cover,),
+                  ),
+                ),
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }

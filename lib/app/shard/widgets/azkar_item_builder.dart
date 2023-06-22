@@ -22,31 +22,34 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
       children: [
         SizedBox(
           width: double.infinity,
-          child: Card(
-              elevation: 10,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
-                child: Column(
-                  children: [
-                    Text(widget.azkarTitle,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+                elevation: 10,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+                  child: Column(
+                    children: [
+                      Text(widget.azkarTitle,
+                          textAlign: TextAlign.center,
+                          style:
+                              GoogleFonts.comforter(fontSize: 15.5, height: 2.3)),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        widget.azkarDes,
                         textAlign: TextAlign.center,
-                        style:
-                            GoogleFonts.comforter(fontSize: 20, height: 2.3)),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      widget.azkarDes,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.cairo(height: 2.3),
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                  ],
-                ),
-              )),
+                        style: GoogleFonts.cairo(height: 2.3,fontSize: 12),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                    ],
+                  ),
+                )),
+          ),
         ),
         CircleAvatar(
           backgroundColor: Colors.amber,

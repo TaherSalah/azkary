@@ -27,7 +27,7 @@ class CounterWidgetBuilder extends StatelessWidget {
                 height: 15,
               ),
               SizedBox(
-                height: 150,
+                height: 120,
                 width: double.infinity,
                 child: ListView.separated(
                     reverse: true,

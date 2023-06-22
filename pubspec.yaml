@@ -39,6 +39,7 @@ dependencies:
   provider: ^6.0.5
   dio:
   flutter_rating_bar: ^4.0.1
+  marquee: ^2.2.3
 #  url_launcher:
 dev_dependencies:
   flutter_test:

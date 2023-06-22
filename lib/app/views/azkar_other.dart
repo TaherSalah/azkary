@@ -17,8 +17,8 @@ class AzkarOthers extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) {
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),                itemBuilder: (context, index) {
                   return AzkerItemBuilder(
                       azkarTitle: azkarOtherTitle[index],
                       azkarDes: azkarOtherDesc[index],

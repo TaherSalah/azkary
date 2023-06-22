@@ -16,6 +16,8 @@ class SleepAzkar extends StatelessWidget {
             ),
             Expanded(
               child: ListView.separated(
+                shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
                     return AzkerItemBuilder(
                         azkarTitle: azkarSleep[index],

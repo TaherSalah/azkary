@@ -20,8 +20,8 @@ class AzkarMassa extends StatelessWidget {
             ),
             Expanded(
               child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),                  itemBuilder: (context, index) {
                     return AzkerItemBuilder(
                         azkarTitle: azkarMassa[index],
                         azkarDes: azkarMassaDes[index],
