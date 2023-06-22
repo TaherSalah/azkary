@@ -79,19 +79,19 @@ class About extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Row(
-                      children: [
-                        Expanded(child: myDivider()),
-                        Padding(
-                          padding: const EdgeInsets.all(7.0),
-                          child: Text(
-                            'تواصل معنا',
-                            style: Theme.of(context).textTheme.bodyLarge,
-                          ),
-                        ),
-                        Expanded(child: myDivider()),
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     Expanded(child: myDivider()),
+                    //     Padding(
+                    //       padding: const EdgeInsets.all(7.0),
+                    //       child: Text(
+                    //         'تواصل معنا',
+                    //         style: Theme.of(context).textTheme.bodyLarge,
+                    //       ),
+                    //     ),
+                    //     Expanded(child: myDivider()),
+                    //   ],
+                    // ),
                     // Container(
                     //     decoration: BoxDecoration(
                     //         border: Border(
@@ -121,7 +121,37 @@ class About extends StatelessWidget {
                         Expanded(child: myDivider()),
                       ],
                     ),
-                    RetBar()
+                    RetBar(),
+                    // Row(
+                    //   children: [
+                    //     Expanded(child: myDivider()),
+                    //     Padding(
+                    //       padding: const EdgeInsets.all(7.0),
+                    //       child: Text(
+                    //         'تواصل معنا',
+                    //         style: Theme.of(context).textTheme.bodyLarge,
+                    //       ),
+                    //     ),
+                    //     Expanded(child: myDivider()),
+                    //   ],
+                    // ),
+                    // Container(
+                    //     decoration: BoxDecoration(
+                    //         border: Border(
+                    //             bottom: BorderSide(
+                    //               color: Colors.grey.withOpacity(0.7),
+                    //             ),
+                    //             left: BorderSide(
+                    //               color: Colors.grey.withOpacity(0.7),
+                    //             ),
+                    //             right: BorderSide(
+                    //               color: Colors.grey.withOpacity(0.7),
+                    //             ))),
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.symmetric(vertical: 18.0),
+                    //       child: const SocialIcons(),
+                    //     )),
+
                   ],
                 ),
               ),

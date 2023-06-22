@@ -33,32 +33,34 @@ class AzkarSabah extends StatelessWidget {
                       SizedBox(
                         width:double.infinity,
                         child: Card(
-
                           elevation: 10,
                             child: Padding(
                               padding: const EdgeInsets.all(33.0),
                               child: Column(
                                 children: [
                                   Text(
-                                      '${azkarSabah[index]}',
+                                      azkarSabah[index],
                                       textAlign: TextAlign.justify,
                                       style: GoogleFonts.cairo(fontSize: 25)
                                   ),
-                                  // Text(
-                                  //   '${sabahList.bless}',
-                                  //   textAlign: TextAlign.start,
-                                  // ),
+                                  SizedBox(height: 10,),
+                                  Text(
+                                    azkarSabahDes[index],
+
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.andadaPro(),
+                                  ),
                                 ],
                               ),
                             )
                         ),
                       ),
-                     // CircleAvatar(
-                     //   child:  Text(
-                     //     '${sabahList.repeat}',
-                     //     textAlign: TextAlign.start,
-                     //   ),
-                     // )
+                     CircleAvatar(
+                       child:  Text(
+                         '${azkarSabahRepate[index]}',
+                         textAlign: TextAlign.start,
+                       ),
+                     )
 
                     ],
                   );
