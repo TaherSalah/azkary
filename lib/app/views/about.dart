@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class About extends StatelessWidget {
@@ -23,27 +24,25 @@ class About extends StatelessWidget {
               ),
             ),
             Text(
-              'أذكار المسلم اليوميةُ',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyLarge!
-                  .copyWith(fontSize: 25, letterSpacing: 2),
+              'اذكار المسلم اليوميةُ',
+              style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 16),
             ),
+            SizedBox(height: 10,),
+
             Text('version : 1.0.0',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontSize: 16.5,
                     fontWeight: FontWeight.normal,
                     color: Colors.grey)),
+            SizedBox(height: 7,),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(Icons.copyright_sharp, size: 20),
                 Text(
                   'All Rights Reseved by Dev Taher Salah \u{1f60e}',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(fontSize: 15),
+                  style: GoogleFonts.cairo(),
                 ),
               ],
             ),

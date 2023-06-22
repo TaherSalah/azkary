@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../controller/azkar_controller.dart';
 import 'azkar_massa.dart';
+import 'azkar_other.dart';
 import 'azkar_sabah.dart';
 import 'about.dart';
 import 'counter_azkar.dart';
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final controller = Provider.of<AzkarController>(context);
     return DefaultTabController(
-      length: 6,
+      length: 7,
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -61,6 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
                   ),
                   Tab(
+                    child: Text('أذكار مختارة',
+                        style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
+                  ),
+                  Tab(
                     child: Text('المسبحةُ الالكترونية',
                         style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
                   ),
@@ -77,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
               AzkarMassa(),
               PrayerAzkar(),
               SleepAzkar(),
+              AzkarOthers(),
               AzkarCounter(),
               About(),
 

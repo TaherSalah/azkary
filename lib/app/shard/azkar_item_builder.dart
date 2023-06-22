@@ -5,15 +5,14 @@ class AzkerItemBuilder extends StatefulWidget {
   String azkarTitle;
   String azkarDes;
   int azkarRepate;
-
   AzkerItemBuilder(
-      {required this.azkarTitle,
+      {super.key, required this.azkarTitle,
       required this.azkarDes,
       required this.azkarRepate});
-
   @override
   State<AzkerItemBuilder> createState() => _AzkerItemBuilderState();
 }
+
 
 class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
   @override
@@ -34,7 +33,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
                         textAlign: TextAlign.center,
                         style:
                             GoogleFonts.comforter(fontSize: 20, height: 2.3)),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -50,10 +49,12 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
               )),
         ),
         CircleAvatar(
+          backgroundColor: Colors.amber,
+
           child: Text(
             '${widget.azkarRepate}',
             textAlign: TextAlign.start,
-            style: GoogleFonts.cairo(),
+            style: GoogleFonts.cairo(color: Colors.black,fontWeight: FontWeight.w400),
           ),
         )
       ],

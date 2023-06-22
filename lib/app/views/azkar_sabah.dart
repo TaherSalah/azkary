@@ -1,9 +1,6 @@
 import 'package:azkary/app/shard/azkar_item_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
-import '../controller/azkar_controller.dart';
 import '../model/sabah_model.dart';
 
 class AzkarSabah extends StatelessWidget {
@@ -11,7 +8,6 @@ class AzkarSabah extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<AzkarController>(context);
     return Scaffold(
       backgroundColor: Colors.black.withOpacity(0.1),
       body: Column(

@@ -27,9 +27,9 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           'home': (context) => HomeScreen(),
-          'splash': (context) => SplashScreen(),
+          'splash': (context) => const SplashScreen(),
         },
-        initialRoute: 'home',
+        initialRoute: 'splash',
       ),
     );
   }
