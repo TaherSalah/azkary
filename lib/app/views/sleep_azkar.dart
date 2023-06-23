@@ -7,7 +7,7 @@ class SleepAzkar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black.withOpacity(0.1),
+        backgroundColor: const Color(0xffF7FFE5),
         body: Column(
           children: [
             const Padding(

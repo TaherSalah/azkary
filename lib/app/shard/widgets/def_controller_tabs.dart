@@ -25,13 +25,15 @@ class DefControllerTabs extends StatelessWidget {
               'اذكار المسلم اليومية',
               style: GoogleFonts.cairo(),
             ),
-            backgroundColor: Colors.amber.withOpacity(0.8),
+            // backgroundColor: Colors.amber.withOpacity(0.8),
+            backgroundColor: const Color(0xffE1ECC8),
+
             elevation: 8,
             centerTitle: true,
             bottom: TabBar(
                 padding: const EdgeInsets.all(10),
                 indicator: BoxDecoration(
-                    color: Colors.amber.shade100,
+                    color: Color(0xffF7FFE5),
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(30),
                         topRight: Radius.circular(30))),

@@ -7,13 +7,14 @@ class AzkerItemBuilder extends StatefulWidget {
   int azkarRepate;
 
   AzkerItemBuilder(
-      {super.key, required this.azkarTitle,
+      {super.key,
+      required this.azkarTitle,
       required this.azkarDes,
       required this.azkarRepate});
+
   @override
   State<AzkerItemBuilder> createState() => _AzkerItemBuilderState();
 }
-
 
 class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
   @override
@@ -28,21 +29,21 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
             child: Card(
                 elevation: 10,
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 15),
                   child: Column(
                     children: [
                       Text(widget.azkarTitle,
                           textAlign: TextAlign.center,
-                          style:
-                              GoogleFonts.comforter(fontSize: 15.5, height: 2.3)),
+                          style: GoogleFonts.notoKufiArabic(
+                              fontSize: 15.5, height: 2.3)),
                       const SizedBox(
                         height: 10,
                       ),
                       Text(
                         widget.azkarDes,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.cairo(height: 2.3,fontSize: 12),
+                        style: GoogleFonts.cairo(height: 2.3, fontSize: 11.5),
                       ),
                       const SizedBox(
                         height: 25,
