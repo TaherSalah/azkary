@@ -1,3 +1,4 @@
+import 'package:azkary/app/shard/app_style.dart';
 import 'package:flutter/material.dart';
 
 class SplashItemBuilder extends StatefulWidget {
@@ -35,11 +36,11 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
                 fontFamily: 'cairo',
                 fontSize: 20),
           ),
-          const SizedBox(
+           const SizedBox(
               height: 50,
               width: 50,
               child: CircularProgressIndicator(
-                color: Colors.amber,
+                color: Color(AppColor.secondaryColor),
                 strokeWidth: 10,
               )),
         ],

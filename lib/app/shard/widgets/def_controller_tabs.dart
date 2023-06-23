@@ -9,6 +9,7 @@ import '../../views/counter_azkar.dart';
 import '../../views/post_prayer_azkar.dart';
 import '../../views/rokia.dart';
 import '../../views/sleep_azkar.dart';
+import '../app_style.dart';
 
 class DefControllerTabs extends StatelessWidget {
   const DefControllerTabs({super.key});
@@ -32,9 +33,9 @@ class DefControllerTabs extends StatelessWidget {
             centerTitle: true,
             bottom: TabBar(
                 padding: const EdgeInsets.all(10),
-                indicator: BoxDecoration(
-                    color: Color(0xffF7FFE5),
-                    borderRadius: const BorderRadius.only(
+                indicator: const BoxDecoration(
+                    color: Color(AppColor.whiteColor),
+                    borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
                         topRight: Radius.circular(30))),
                 isScrollable: true,

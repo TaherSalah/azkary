@@ -27,7 +27,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
-                elevation: 10,
+                elevation: 14,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 20.0, vertical: 15),
@@ -54,7 +54,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
           ),
         ),
         CircleAvatar(
-          backgroundColor: Colors.amber,
+          backgroundColor: const Color(0xffE1ECC8),
           child: Text(
             '${widget.azkarRepate}',
             textAlign: TextAlign.start,

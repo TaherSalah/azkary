@@ -35,7 +35,7 @@ class AboutItemBuilder extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text('version : 1.0.0',
+          Text('version : 2.0.0',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontSize: 16.5,
                   fontWeight: FontWeight.normal,
@@ -48,7 +48,7 @@ class AboutItemBuilder extends StatelessWidget {
             children: [
               const Icon(Icons.copyright_sharp, size: 20),
               Text(
-                'All Rights Reseved by Dev Taher Salah \u{1f60e}',
+                'All Rights Reserved by Dev Taher Salah \u{1f60e}',
                 style: GoogleFonts.merienda(fontSize: 14),
               ),
             ],
