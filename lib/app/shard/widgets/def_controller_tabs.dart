@@ -7,6 +7,7 @@ import '../../views/azkar_other.dart';
 import '../../views/azkar_sabah.dart';
 import '../../views/counter_azkar.dart';
 import '../../views/post_prayer_azkar.dart';
+import '../../views/rokia.dart';
 import '../../views/sleep_azkar.dart';
 
 class DefControllerTabs extends StatelessWidget {
@@ -15,7 +16,7 @@ class DefControllerTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 7,
+      length: 8,
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -58,6 +59,10 @@ class DefControllerTabs extends StatelessWidget {
                         style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
                   ),
                   Tab(
+                    child: Text('الرقية الشرعية',
+                        style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
+                  ),
+                  Tab(
                     child: Text('المسبحةُ الالكترونية',
                         style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
                   ),
@@ -74,6 +79,7 @@ class DefControllerTabs extends StatelessWidget {
               PrayerAzkar(),
               SleepAzkar(),
               AzkarOthers(),
+              RokiaScreen(),
               AzkarCounter(),
               About(),
             ],

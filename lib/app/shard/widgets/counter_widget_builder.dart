@@ -41,35 +41,35 @@ class CounterWidgetBuilder extends StatelessWidget {
                           showDialog<String>(
                               context: context,
                               builder: (BuildContext context) => AlertDialog(
-                                elevation: 10,
-                                titleTextStyle: const TextStyle(),
-                                title: Text(
-                                    textAlign: TextAlign.center,
-                                    'فضل الذكر '
-
-                                    ,style: GoogleFonts.cairo(color: Colors.black)),
-                                content: Directionality(
-                                    textDirection: TextDirection.rtl,
-                                    child: Text(azkarContent[index],
-                                        style: GoogleFonts.cairo())),
-                                actions: <Widget>[
-                                  Center(
-                                    child: ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.pop(context, 'OK');
-                                      },
-                                      child: Text('تـــــم'),
-                                    ),
-                                  ),
-                                ],
-                              ));
+                                    elevation: 10,
+                                    titleTextStyle: const TextStyle(),
+                                    title: Text(
+                                        textAlign: TextAlign.center,
+                                        'فضل الذكر ',
+                                        style: GoogleFonts.cairo(
+                                            color: Colors.black)),
+                                    content: Directionality(
+                                        textDirection: TextDirection.rtl,
+                                        child: Text(azkarContent[index],
+                                            style: GoogleFonts.cairo())),
+                                    actions: <Widget>[
+                                      Center(
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pop(context, 'OK');
+                                          },
+                                          child: Text('تـــــم'),
+                                        ),
+                                      ),
+                                    ],
+                                  ));
                         },
                         child: Card(
                             shape: const OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Colors.amber,
-                                  width: 3.5,
-                                )),
+                              color: Colors.amber,
+                              width: 3.5,
+                            )),
                             color: Colors.black.withOpacity(0.5),
                             elevation: 10,
                             child: Padding(
@@ -77,7 +77,7 @@ class CounterWidgetBuilder extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(azkarDescription[index],
                                       style: GoogleFonts.cairo(
@@ -98,8 +98,8 @@ class CounterWidgetBuilder extends StatelessWidget {
                       );
                     },
                     separatorBuilder: (context, index) => const SizedBox(
-                      width: 10,
-                    ),
+                          width: 10,
+                        ),
                     itemCount: 10),
               ),
             ],
@@ -147,7 +147,7 @@ class CounterWidgetBuilder extends StatelessWidget {
                   ElevatedButton(
                       style: const ButtonStyle(
                           backgroundColor:
-                          MaterialStatePropertyAll(Colors.amber)),
+                              MaterialStatePropertyAll(Colors.amber)),
                       onPressed: () {
                         controller.incrementCount();
                       },
@@ -161,7 +161,7 @@ class CounterWidgetBuilder extends StatelessWidget {
                       style: ButtonStyle(
                           elevation: const MaterialStatePropertyAll(8),
                           backgroundColor:
-                          MaterialStatePropertyAll(Colors.amber.shade100)),
+                              MaterialStatePropertyAll(Colors.amber.shade100)),
                       onPressed: () {
                         controller.restCount();
                       },
