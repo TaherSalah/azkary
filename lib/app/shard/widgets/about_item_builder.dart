@@ -73,7 +73,7 @@ class AboutItemBuilder extends StatelessWidget {
                 Text(
                   textAlign: TextAlign.justify,
                   selectionColor: Colors.amber,
-                  'برنامج أذكار المسلم اليوميةُ هو رفيق كل مسلم الذي لايمكنك الاستغناء عنه في يومك حيث يذكرك بالاذكار التي يسن لكل مسلم ان يكون علي دراية بها من أذكار الصباح وأذكار المساء والاذكار المفروضة عقب كل صلاه كما يمكن التسبيح داخل البرنامج ومعرفة العدد الذي اتممتة من التسبيح .',
+                  'برنامج أذكار المسلم اليوميةُ هو رفيق كل مسلم الذي لايمكنك الاستغناء عنه في يومك حيث يذكرك بالاذكار التي يسن لكل مسلم ان يكون علي دراية بها من أذكار الصباح وأذكار المساء والاذكار المفروضة عقب كل صلاه كما يمكن التسبيح داخل البرنامج ومعرفة العدد الذي اتممتة من التسبيح.',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 16.5, fontWeight: FontWeight.normal),
                 ),
@@ -112,7 +112,7 @@ class AboutItemBuilder extends StatelessWidget {
                   child: Text(
                     textAlign: TextAlign.justify,
                     selectionColor: Colors.amber,
-                    'برنامج أذكار المسلم اليوميةُ هو صدقة جارية لكل اموات المسلمبن ولكل من شارك هذا التطبيق لوجه الله تعالي  .',
+                    'برنامج أذكار المسلم اليوميةُ هو صدقة جارية لكل اموات المسلمين ولكل من شارك هذا التطبيق لوجه الله تعالي.',
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontSize: 16.5, fontWeight: FontWeight.normal),
                   ),

@@ -5,6 +5,7 @@ class AzkerItemBuilder extends StatefulWidget {
   String azkarTitle;
   String azkarDes;
   int azkarRepate;
+
   AzkerItemBuilder(
       {super.key, required this.azkarTitle,
       required this.azkarDes,
