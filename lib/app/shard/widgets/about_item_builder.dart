@@ -145,22 +145,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                       ),
                     ),
                   ),
-                  Center(
-                    child: Visibility(
-                      visible: _pressCount <  azkarContent.length,
-                      child: Card(
-                        child: Text('This is a card'),
-                      ),
-                    ),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {
-                      setState(() {
-                        _pressCount++;
-                      });
-                    },
-                    child: Icon(Icons.delete),
-                  ),
+
                 ],
               ),
             ),
