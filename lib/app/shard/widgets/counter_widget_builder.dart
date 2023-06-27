@@ -44,7 +44,6 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                     physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemCount: azkarContent.length,
-                    reverse: true,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return Container(
@@ -122,7 +121,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                       );
                     }),
               ),
-              const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 7)),
               Text('المسبحةُ الالكترونية',
                   style: GoogleFonts.cairo(
                       fontSize: 30.sp,
@@ -130,7 +129,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                       fontWeight: FontWeight.bold)),
               countDivider(),
               SizedBox(
-                height: 18.h,
+                height: 12.h,
               ),
               Card(
                 elevation: 10,
@@ -159,17 +158,17 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                      style: const ButtonStyle(
+                      style:  ButtonStyle(
                           shape: MaterialStatePropertyAll(
                               BeveledRectangleBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(
+                                      const BorderRadius.all(Radius.circular(
                                     10,
                                   )),
                                   side: BorderSide(
-                                    width: 1.5,
-                                      color: Color(AppColor.whiteColor)))),
-                          backgroundColor: MaterialStatePropertyAll(
+                                    width: 1.5.w,
+                                      color: const Color(AppColor.whiteColor)))),
+                          backgroundColor: const MaterialStatePropertyAll(
                               Color(AppColor.secondaryColor))),
                       onPressed: () {
                         controller.incrementCount();
@@ -183,15 +182,15 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                   ElevatedButton(
 
                       style: ButtonStyle(
-                          shape: const MaterialStatePropertyAll(
+                          shape:  MaterialStatePropertyAll(
                               BeveledRectangleBorder(
                                   borderRadius:
-                                  BorderRadius.all(Radius.circular(
+                                  const BorderRadius.all(Radius.circular(
                                     10,
                                   )),
                                   side: BorderSide(
-                                      width: 1.5,
-                                      color: Color(AppColor.whiteColor)))),
+                                      width: 1.5.w,
+                                      color: const Color(AppColor.whiteColor)))),
 
                           elevation: const MaterialStatePropertyAll(8),
                           backgroundColor: MaterialStatePropertyAll(

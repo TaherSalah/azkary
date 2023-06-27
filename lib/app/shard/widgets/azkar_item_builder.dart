@@ -28,7 +28,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding:  EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Card(
                 elevation: 14,
                 child: Padding(
@@ -59,10 +59,10 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
         CircleAvatar(
           backgroundColor:const   Color(AppColor.primaryColor),
           child: Text(
-            '${widget.azkarRepate}',
+            widget.azkarRepate,
             textAlign: TextAlign.start,
             style: GoogleFonts.cairo(
-                color: Colors.black, fontWeight: FontWeight.w400),
+                color: Colors.white, fontWeight: FontWeight.bold),
           ),
         )
       ],
