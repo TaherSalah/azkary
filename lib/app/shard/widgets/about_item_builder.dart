@@ -1,10 +1,16 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 
-class AboutItemBuilder extends StatelessWidget {
+class AboutItemBuilder extends StatefulWidget {
   const AboutItemBuilder({super.key});
 
   @override
+  State<AboutItemBuilder> createState() => _AboutItemBuilderState();
+}
+
+class _AboutItemBuilderState extends State<AboutItemBuilder> {
+  @override
   Widget build(BuildContext context) {
+    int _pressCount = 0;
     return Container(
       color: const Color(0xffF7FFE5),
       child: Column(
@@ -138,6 +144,22 @@ class AboutItemBuilder extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
+                  ),
+                  Center(
+                    child: Visibility(
+                      visible: _pressCount <  azkarContent.length,
+                      child: Card(
+                        child: Text('This is a card'),
+                      ),
+                    ),
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        _pressCount++;
+                      });
+                    },
+                    child: Icon(Icons.delete),
                   ),
                 ],
               ),
