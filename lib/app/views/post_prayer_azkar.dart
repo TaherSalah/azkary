@@ -1,6 +1,4 @@
-import 'package:azkary/app/shard/widgets/azkar_item_builder.dart';
-import 'package:flutter/material.dart';
-import '../model/prayer_azkar_model.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class PrayerAzkar extends StatelessWidget {
   const PrayerAzkar({super.key});

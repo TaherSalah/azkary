@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../constanc/app_style.dart';
 
 class AzkerItemBuilder extends StatefulWidget {
   String azkarTitle;
   String azkarDes;
-  int azkarRepate;
+  String azkarRepate;
 
   AzkerItemBuilder(
       {super.key,
@@ -25,7 +28,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(8.0),
             child: Card(
                 elevation: 14,
                 child: Padding(
@@ -36,17 +39,17 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
                       Text(widget.azkarTitle,
                           textAlign: TextAlign.center,
                           style: GoogleFonts.notoKufiArabic(
-                              fontSize: 15.5, height: 2.3)),
-                      const SizedBox(
-                        height: 10,
+                              fontSize: 14.sp, height: 2.3)),
+                       SizedBox(
+                        height: 10.h,
                       ),
                       Text(
                         widget.azkarDes,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.cairo(height: 2.3, fontSize: 11.5),
+                        style: GoogleFonts.cairo(height: 2.3, fontSize: 11.sp),
                       ),
-                      const SizedBox(
-                        height: 25,
+                       SizedBox(
+                        height: 25.h,
                       ),
                     ],
                   ),
@@ -54,7 +57,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
           ),
         ),
         CircleAvatar(
-          backgroundColor: const Color(0xffE1ECC8),
+          backgroundColor:const   Color(AppColor.primaryColor),
           child: Text(
             '${widget.azkarRepate}',
             textAlign: TextAlign.start,

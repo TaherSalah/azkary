@@ -1,15 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
-import '../../views/about.dart';
-import '../../views/azkar_massa.dart';
-import '../../views/azkar_other.dart';
-import '../../views/azkar_sabah.dart';
-import '../../views/counter_azkar.dart';
-import '../../views/post_prayer_azkar.dart';
-import '../../views/rokia.dart';
-import '../../views/sleep_azkar.dart';
-import '../app_style.dart';
+
 
 class DefControllerTabs extends StatelessWidget {
   const DefControllerTabs({super.key});
@@ -22,9 +13,12 @@ class DefControllerTabs extends StatelessWidget {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           appBar: AppBar(
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarColor: Color(0xffE1ECC8),
+            ),
             title: Text(
-              'اذكار المسلم اليومية',
-              style: GoogleFonts.cairo(),
+              'أذكار المسلم اليومية',
+              style: GoogleFonts.cairo(fontSize: 20.sp,fontWeight: FontWeight.bold),
             ),
             // backgroundColor: Colors.amber.withOpacity(0.8),
             backgroundColor: const Color(0xffE1ECC8),

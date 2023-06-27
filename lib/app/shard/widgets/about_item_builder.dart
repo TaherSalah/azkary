@@ -1,8 +1,4 @@
-import 'package:azkary/app/shard/widgets/rate_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'my_divider.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class AboutItemBuilder extends StatelessWidget {
   const AboutItemBuilder({super.key});
@@ -13,43 +9,38 @@ class AboutItemBuilder extends StatelessWidget {
       color: const Color(0xffF7FFE5),
       child: Column(
         children: [
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 20.h,
           ),
           Center(
             child: SizedBox(
               height: 150,
               width: 150,
               child: Image.asset(
-                'assets/images/azkary_logo.png',
+                azkaryLogo,
                 height: 150,
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          // Text(
-          //   'اذكار المسلم اليوميةُ',
-          //   style:
-          //   GoogleFonts.cairo(fontWeight: FontWeight.bold, fontSize: 16),
-          // ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: 10.h,
           ),
           Text('version : 2.0.0',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 16.5,
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.normal,
                   color: Colors.grey)),
-          const SizedBox(
-            height: 7,
+          SizedBox(
+            height: 7.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.copyright_sharp, size: 20),
+              Icon(Icons.copyright_sharp, size: 20.sp),
               Text(
                 'All Rights Reserved by Dev Taher Salah \u{1f60e}',
-                style: GoogleFonts.merienda(fontSize: 14),
+                style: GoogleFonts.merienda(fontSize: 10.sp),
               ),
             ],
           ),
@@ -67,20 +58,20 @@ class AboutItemBuilder extends StatelessWidget {
                         child: Text(
                           'عن البرنامج',
                           style: GoogleFonts.cairo(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold, fontSize: 15.sp),
                         ),
                       ),
                       Expanded(child: myDivider()),
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 10.h,
                   ),
                   Text(
                     textAlign: TextAlign.justify,
                     selectionColor: Colors.amber,
                     'برنامج أذكار المسلم اليوميةُ هو رفيق كل مسلم الذي لايمكنك الاستغناء عنه في يومك حيث يذكرك بالاذكار التي يسن لكل مسلم ان يكون علي دراية بها من أذكار الصباح وأذكار المساء والاذكار المفروضة عقب كل صلاه كما يمكن التسبيح داخل البرنامج ومعرفة العدد الذي اتممتة من التسبيح.',
-                    style: GoogleFonts.notoKufiArabic(fontSize: 15.5),
+                    style: GoogleFonts.notoKufiArabic(fontSize: 14.sp),
                   ),
                   const SizedBox(
                     height: 10,
@@ -93,7 +84,7 @@ class AboutItemBuilder extends StatelessWidget {
                         child: Text(
                           'تقييم التطبيق',
                           style: GoogleFonts.cairo(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold, fontSize: 16.sp),
                         ),
                       ),
                       Expanded(child: myDivider()),
@@ -108,7 +99,7 @@ class AboutItemBuilder extends StatelessWidget {
                         child: Text(
                           'صدقة جارية',
                           style: GoogleFonts.cairo(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold, fontSize: 16.sp),
                         ),
                       ),
                       Expanded(child: myDivider()),
@@ -120,7 +111,7 @@ class AboutItemBuilder extends StatelessWidget {
                       textAlign: TextAlign.justify,
                       selectionColor: Colors.amber,
                       'برنامج أذكار المسلم اليوميةُ هو صدقة جارية لكل اموات المسلمين ولكل من شارك هذا التطبيق لوجه الله تعالي.',
-                      style: GoogleFonts.notoKufiArabic(fontSize: 15.5),
+                      style: GoogleFonts.notoKufiArabic(fontSize: 14.sp),
                     ),
                   ),
                   Row(
@@ -131,7 +122,7 @@ class AboutItemBuilder extends StatelessWidget {
                         child: Text(
                           'تطوير',
                           style: GoogleFonts.cairo(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold, fontSize: 16.sp),
                         ),
                       ),
                       Expanded(child: myDivider()),
@@ -142,7 +133,7 @@ class AboutItemBuilder extends StatelessWidget {
                       height: 150,
                       width: 150,
                       child: Image.asset(
-                        'assets/images/perLogo.png',
+                        devLogo,
                         height: 150,
                         fit: BoxFit.cover,
                       ),

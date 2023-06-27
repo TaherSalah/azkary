@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 
-import '../model/all_azkar_modal.dart';
-import '../model/azkar_massa_model.dart';
-import '../services/azkar_services.dart';
+
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class AzkarController extends ChangeNotifier {
   AzkarRemoteServices azkarRemoteServices = AzkarRemoteServices();

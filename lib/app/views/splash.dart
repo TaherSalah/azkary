@@ -1,7 +1,9 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import '../shard/widgets/splach_builder.dart';
-import 'home.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
+
+
+
+
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 5),
+        const Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const HomeScreen())));
   }

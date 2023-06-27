@@ -1,10 +1,9 @@
-import 'package:azkary/app/shard/widgets/azkar_item_builder.dart';
-import 'package:flutter/material.dart';
-import '../model/massa_model.dart';
 
 
 
 
+
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class AzkarMassa extends StatelessWidget {
   const AzkarMassa({super.key});

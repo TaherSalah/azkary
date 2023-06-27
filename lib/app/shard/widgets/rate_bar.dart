@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class RetBar extends StatelessWidget {
   const RetBar({Key? key}) : super(key: key);

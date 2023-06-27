@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'app/controller/azkar_controller.dart';
-import 'app/views/home.dart';
-import 'app/views/splash.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
+
+
+
+
 
 void main() {
   runApp(const MyApp());
@@ -14,23 +14,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => AzkarController()..fetchAzkarMassa()..fetchAzkarSabah()..fetchAzkarPostPrayer()..fetchAzkar(),
-        )
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.lime,
-        ),
-        routes: {
-          'home': (context) => const HomeScreen(),
-          'splash': (context) => const SplashScreen(),
-        },
-        initialRoute: 'splash',
-      ),
+    return ScreenUtilInit(
+      builder: (BuildContext context, Widget? child) {
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              create: (context) => AzkarController()..fetchAzkarMassa()..fetchAzkarSabah()..fetchAzkarPostPrayer()..fetchAzkar(),
+            )
+          ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.lime,
+            ),
+            routes: {
+              'home': (context) => const HomeScreen(),
+              'splash': (context) => const SplashScreen(),
+            },
+            initialRoute: 'splash',
+          ),
+        );
+      },
+
     );
   }
 }

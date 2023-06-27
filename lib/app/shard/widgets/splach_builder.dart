@@ -1,5 +1,5 @@
-import 'package:azkary/app/shard/app_style.dart';
-import 'package:flutter/material.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
+
 
 class SplashItemBuilder extends StatefulWidget {
   const SplashItemBuilder({super.key});
@@ -22,7 +22,7 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
           Column(
             children: [
               Image.asset(
-                'assets/images/azkary_logo.png',
+                azkaryLogo,
                 height: 400.0,
                 width: 300.0,
               ),

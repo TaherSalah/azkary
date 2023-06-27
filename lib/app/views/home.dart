@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../shard/widgets/def_controller_tabs.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
 
 

@@ -1,6 +1,7 @@
-import 'package:azkary/app/shard/widgets/azkar_item_builder.dart';
-import 'package:flutter/material.dart';
-import '../model/sleep_model.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
+
+
+
 class SleepAzkar extends StatelessWidget {
   const SleepAzkar({super.key});
 
@@ -22,7 +23,7 @@ class SleepAzkar extends StatelessWidget {
                     return AzkerItemBuilder(
                         azkarTitle: azkarSleep[index],
                         azkarDes: azkarSleepDes[index],
-                        azkarRepate: azkarSleepRepate[index]);
+                        azkarRepate: '${azkarSleepRepate[index]}');
                   },
                   separatorBuilder: (context, index) => const SizedBox(
                         height: 15,

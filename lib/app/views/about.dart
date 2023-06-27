@@ -1,5 +1,4 @@
-import 'package:azkary/app/shard/widgets/about_item_builder.dart';
-import 'package:flutter/material.dart';
+import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class About extends StatelessWidget {
   const About({Key? key}) : super(key: key);
