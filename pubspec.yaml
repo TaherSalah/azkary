@@ -39,7 +39,6 @@ dependencies:
   provider: ^6.0.5
   dio:
   flutter_rating_bar: ^4.0.1
-  flutter_image_slideshow: ^0.1.5
   flutter_screenutil: ^5.8.4
 dev_dependencies:
   flutter_test:
