@@ -19,32 +19,36 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Column(
-            children: [
-              Image.asset(
-                azkaryLogo,
-                height: 400.0,
-                width: 300.0,
-              ),
-            ],
-          ),
-          const Text(
-            'مرحباٌ بك في رفيقك الاول ',
-            style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'cairo',
-                fontSize: 20),
-          ),
-           const SizedBox(
-              height: 50,
-              width: 50,
-              child: CircularProgressIndicator(
-                color: Color(AppColor.secondaryColor),
-                strokeWidth: 10,
-              )),
-        ],
+      Column(
+      children: [
+      Image.asset(
+        azkaryLogo,
+        height: 400.0,
+        width: 300.0,
       ),
+      ],
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child:  Text(
+          textAlign:TextAlign.center,
+        '(سبَق المُفرِّدونَ سبَق المُفرِّدونَ )\n قالوا : يا رسولَ اللهِ ما المُفرِّدونَ ؟ \n قال :( الذَّاكرونَ اللهَ كثيرًا والذَّاكراتُ)'
+        ,
+        style: GoogleFonts.cairo(fontSize: 15.sp,fontWeight: FontWeight.bold),
+        ),
+      ),
+    ),
+    const SizedBox(
+    height: 50,
+    width: 50,
+    child: CircularProgressIndicator(
+    color: Color(AppColor.secondaryColor),
+    strokeWidth: 10,
+    )),
+    ],
+    ),
     );
   }
 }
