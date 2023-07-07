@@ -10,8 +10,10 @@ class DefControllerTabs extends StatelessWidget {
     return DefaultTabController(
       length: 8,
       child: Directionality(
+
         textDirection: TextDirection.rtl,
         child: Scaffold(
+
           appBar: AppBar(
             systemOverlayStyle: const SystemUiOverlayStyle(
               statusBarColor: Color(0xffE1ECC8),
@@ -79,6 +81,7 @@ class DefControllerTabs extends StatelessWidget {
               RokiaScreen(),
               AzkarCounter(),
               About(),
+              
             ],
           ),
         ),

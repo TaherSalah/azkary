@@ -19,14 +19,17 @@ class MyApp extends StatelessWidget {
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(
-              create: (context) => AzkarController()..fetchAzkarMassa()..fetchAzkarSabah()..fetchAzkarPostPrayer()..fetchAzkar(),
+              create: (context) => AzkarProvider()..fetchAzkarMassa()..fetchAzkarSabah()..fetchAzkarPostPrayer()..fetchAzkar(),
             )
           ],
           child: MaterialApp(
+
+
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.lime,
             ),
+
             routes: {
               'home': (context) => const HomeScreen(),
               'splash': (context) => const SplashScreen(),

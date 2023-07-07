@@ -19,7 +19,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<AzkarController>(context);
+    final controller = Provider.of<AzkarProvider>(context);
 
     return Card(
       child: Stack(alignment: Alignment.center, children: [

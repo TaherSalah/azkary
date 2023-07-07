@@ -1,8 +1,6 @@
-
-
 import 'package:azkary/app/shard/exports/all_exports.dart';
 
-class AzkarController extends ChangeNotifier {
+class AzkarProvider extends ChangeNotifier {
   AzkarRemoteServices azkarRemoteServices = AzkarRemoteServices();
   int counter = 0;
 
@@ -48,12 +46,22 @@ class AzkarController extends ChangeNotifier {
     notifyListeners();
   }
 
+  ///**** counter methods ****///
+
   incrementCount() {
     counter++;
     notifyListeners();
   }
-restCount() {
-    counter =0;
+
+  restCount() {
+    counter = 0;
     notifyListeners();
   }
+
+// removeZakar(index){
+//
+//   azkarSabahRepate.remove(index);
+//   notifyListeners();
+//
+// }
 }

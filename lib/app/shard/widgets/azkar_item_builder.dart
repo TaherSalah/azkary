@@ -39,7 +39,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
                       Text(
                         widget.azkarTitle,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'maja', fontSize: 17.sp),
+                        style: TextStyle(fontFamily: 'maja', fontSize: 17.sp,height: 1.8),
                       ),
                       SizedBox(
                         height: 10.h,
