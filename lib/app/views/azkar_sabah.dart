@@ -1,5 +1,6 @@
-
 import 'package:azkary/app/shard/exports/all_exports.dart';
+import 'package:azkary/app/shard/navigation.dart';
+import 'package:azkary/app/views/simple_count.dart';
 
 class AzkarSabah extends StatefulWidget {
   const AzkarSabah({super.key});
@@ -11,7 +12,7 @@ class AzkarSabah extends StatefulWidget {
 class _AzkarSabahState extends State<AzkarSabah> {
   @override
   Widget build(BuildContext context) {
-    final cont=Provider.of<AzkarProvider>(context);
+    final cont = Provider.of<AzkarProvider>(context);
     return Scaffold(
       backgroundColor: const Color(0xffF7FFE5),
       body: Column(
@@ -25,8 +26,8 @@ class _AzkarSabahState extends State<AzkarSabah> {
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: (){
-
+                    onTap: () {
+                      navigate(context, AzkarSimpleCounter(azkarConten: azkarSabahDes[index],));
                     },
                     child: AzkerItemBuilder(
                         azkarTitle: azkarSabah[index],
