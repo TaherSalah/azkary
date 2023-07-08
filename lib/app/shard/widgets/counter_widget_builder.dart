@@ -56,7 +56,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                       shape: OutlineInputBorder(
                                           borderSide: BorderSide(
                                               color: const Color(
-                                                  AppColor.secondaryColor),
+                                                  AppStyle.secondaryColor),
                                               width: 2.w)),
                                       elevation: 10,
                                       titleTextStyle: const TextStyle(),
@@ -88,7 +88,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                           child: Card(
                               shape: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                color: const Color(AppColor.whiteColor),
+                                color: const Color(AppStyle.whiteColor),
                                 width: 3.5.w,
                               )),
                               color: Colors.black.withOpacity(0.5),
@@ -136,7 +136,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                 color: Colors.black.withOpacity(0.5),
                 shape: const OutlineInputBorder(
                     borderSide: BorderSide(
-                        color: Color(AppColor.whiteColor), width: 5)),
+                        color: Color(AppStyle.whiteColor), width: 5)),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(22),
@@ -167,9 +167,9 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                   )),
                                   side: BorderSide(
                                     width: 1.5.w,
-                                      color: const Color(AppColor.whiteColor)))),
+                                      color: const Color(AppStyle.whiteColor)))),
                           backgroundColor: const MaterialStatePropertyAll(
-                              Color(AppColor.secondaryColor))),
+                              Color(AppStyle.secondaryColor))),
                       onPressed: () {
                         controller.incrementCount();
                       },
@@ -190,11 +190,11 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                   )),
                                   side: BorderSide(
                                       width: 1.5.w,
-                                      color: const Color(AppColor.whiteColor)))),
+                                      color: const Color(AppStyle.whiteColor)))),
 
                           elevation: const MaterialStatePropertyAll(8),
                           backgroundColor: MaterialStatePropertyAll(
-                              const Color(AppColor.primaryColor)
+                              const Color(AppStyle.primaryColor)
                                   .withOpacity(0.8))),
                       onPressed: () {
                         controller.restCount();

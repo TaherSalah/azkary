@@ -2,9 +2,10 @@ import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class AzkarSimpleCounter extends StatefulWidget {
 
-  String azkarConten;
 
   AzkarSimpleCounter({super.key,required this.azkarConten});
+  String azkarConten;
+
   @override
   State<AzkarSimpleCounter> createState() => _AzkarSimpleCounterState();
 }
@@ -57,13 +58,14 @@ class _CounterSimpleItemBuilderState extends State<CounterSimpleItemBuilder> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
           const Padding(padding: EdgeInsets.symmetric(vertical: 7)),
           Card(
             elevation: 10,
             color: Colors.black.withOpacity(0.5),
             shape: const OutlineInputBorder(
                 borderSide: BorderSide(
-                    color: Color(AppColor.whiteColor), width: 5)),
+                    color: Color(AppStyle.whiteColor), width: 5)),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),
@@ -95,9 +97,9 @@ class _CounterSimpleItemBuilderState extends State<CounterSimpleItemBuilder> {
                               side: BorderSide(
                                   width: 1.5.w,
                                   color:
-                                      const Color(AppColor.whiteColor)))),
+                                      const Color(AppStyle.whiteColor)))),
                       backgroundColor: const MaterialStatePropertyAll(
-                          Color(AppColor.secondaryColor))),
+                          Color(AppStyle.secondaryColor))),
                   onPressed: () {
                     controller.incrementCount();
                   },
@@ -118,10 +120,10 @@ class _CounterSimpleItemBuilderState extends State<CounterSimpleItemBuilder> {
                               side: BorderSide(
                                   width: 1.5.w,
                                   color:
-                                      const Color(AppColor.whiteColor)))),
+                                      const Color(AppStyle.whiteColor)))),
                       elevation: const MaterialStatePropertyAll(8),
                       backgroundColor: MaterialStatePropertyAll(
-                          const Color(AppColor.primaryColor)
+                          const Color(AppStyle.primaryColor)
                               .withOpacity(0.8))),
                   onPressed: () {
                     controller.restCount();

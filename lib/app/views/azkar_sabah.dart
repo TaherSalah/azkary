@@ -1,5 +1,6 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 import 'package:azkary/app/shard/navigation.dart';
+import 'package:azkary/app/views/done.dart';
 import 'package:azkary/app/views/simple_count.dart';
 
 class AzkarSabah extends StatefulWidget {
@@ -14,6 +15,14 @@ class _AzkarSabahState extends State<AzkarSabah> {
   Widget build(BuildContext context) {
     final cont = Provider.of<AzkarProvider>(context);
     return Scaffold(
+      
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(AppStyle.primaryColor),
+        onPressed: () {
+        navigate(context, DoneScreen());
+      },
+      child: Icon(Icons.done_all,color: Color(AppStyle.whiteColor),),
+      ),
       backgroundColor: const Color(0xffF7FFE5),
       body: Column(
         children: [

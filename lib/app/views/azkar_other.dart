@@ -73,7 +73,7 @@ Widget buildOtherZakarItem({
         ),
       ),
       CircleAvatar(
-        backgroundColor: const Color(AppColor.primaryColor),
+        backgroundColor: const Color(AppStyle.primaryColor),
         child: Text(
           azkarRepate,
           textAlign: TextAlign.start,

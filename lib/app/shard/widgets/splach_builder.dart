@@ -44,7 +44,7 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
     height: 50,
     width: 50,
     child: CircularProgressIndicator(
-    color: Color(AppColor.secondaryColor),
+    color: Color(AppStyle.secondaryColor),
     strokeWidth: 10,
     )),
     ],

@@ -39,7 +39,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
                       Text(
                         widget.azkarTitle,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: 'maja', fontSize: 17.sp,height: 1.8),
+                        style: TextStyle(fontFamily: AppStyle.fontFamily, fontSize: 17.sp,height: 1.8),
                       ),
                       SizedBox(
                         height: 10.h,
@@ -58,14 +58,14 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
           ),
         ),
         CircleAvatar(
-          backgroundColor: const Color(AppColor.primaryColor),
+          backgroundColor: const Color(AppStyle.primaryColor),
           child: Text(
             widget.azkarRepate,
             textAlign: TextAlign.start,
             style: GoogleFonts.cairo(
                 color: Colors.white, fontWeight: FontWeight.bold),
           ),
-        )
+        ),
       ],
     );
   }

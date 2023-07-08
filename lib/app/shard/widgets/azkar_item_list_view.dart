@@ -30,7 +30,7 @@ class AzkarListViewItemBuilder extends StatelessWidget {
                           builder: (BuildContext context) => AlertDialog(
                                 shape: const OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Color(AppColor.secondaryColor),
+                                        color: Color(AppStyle.secondaryColor),
                                         width: 2)),
                                 elevation: 10,
                                 titleTextStyle: const TextStyle(),
@@ -62,7 +62,7 @@ class AzkarListViewItemBuilder extends StatelessWidget {
                     child: Card(
                         shape: const OutlineInputBorder(
                             borderSide: BorderSide(
-                          color: Color(AppColor.whiteColor),
+                          color: Color(AppStyle.whiteColor),
                           width: 3.5,
                         )),
                         color: Colors.black.withOpacity(0.5),
