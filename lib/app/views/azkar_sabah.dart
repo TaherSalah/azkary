@@ -36,7 +36,7 @@ class _AzkarSabahState extends State<AzkarSabah> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      navigate(context, AzkarSimpleCounter(azkarConten: azkarSabahDes[index],));
+                      navigate(context, AzkarSimpleCounter(azkarConten: azkarSabah[index],azkarContenDes: azkarSabahDes[index],azkarContenRepate: azkarSabahRepate[index],));
                     },
                     child: AzkerItemBuilder(
                         azkarTitle: azkarSabah[index],
