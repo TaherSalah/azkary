@@ -1,4 +1,5 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
+import 'package:flutter/cupertino.dart';
 
 class AzkarProvider extends ChangeNotifier {
   AzkarRemoteServices azkarRemoteServices = AzkarRemoteServices();
@@ -50,6 +51,8 @@ class AzkarProvider extends ChangeNotifier {
 
   incrementCount() {
     counter++;
+
+
     notifyListeners();
   }
 
@@ -64,4 +67,15 @@ class AzkarProvider extends ChangeNotifier {
 //   notifyListeners();
 //
 // }
+
+
+  showDaialog(){
+    if(counter ==10){
+      return CupertinoAlertDialog(
+        insetAnimationDuration: Duration(seconds: 5),
+        title: Text('عظيم لقد وصلت الي 100 تسبيحه',style: GoogleFonts.cairo(),),
+      );
+    }
+  }
+
 }
