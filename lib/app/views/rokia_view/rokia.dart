@@ -1,6 +1,6 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 import 'package:azkary/app/shard/navigation.dart';
-import 'package:azkary/app/views/rokia_counter.dart';
+import 'package:azkary/app/views/rokia_view/rokia_counter.dart';
 
 class RokiaScreen extends StatelessWidget {
   const RokiaScreen({super.key});

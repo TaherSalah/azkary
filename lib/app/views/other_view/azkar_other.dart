@@ -1,6 +1,4 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
-import 'package:azkary/app/shard/navigation.dart';
-import 'package:azkary/app/views/other_count.dart';
 
 class AzkarOthers extends StatelessWidget {
   const AzkarOthers({super.key});

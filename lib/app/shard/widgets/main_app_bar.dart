@@ -1,5 +1,8 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 
+
+
+
 PreferredSizeWidget mainAppBarWidget(){
   return AppBar(
     systemOverlayStyle: const SystemUiOverlayStyle(
@@ -33,7 +36,7 @@ PreferredSizeWidget mainAppBarWidget(){
                 style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
           ),
           Tab(
-            child: Text('أذكار بعد الصلاه',
+            child: Text('أذكار الصلاة',
                 style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
           ),
           Tab(

@@ -1,42 +1,43 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
-import 'package:azkary/app/shard/navigation.dart';
-import 'package:azkary/app/views/prayer_count.dart';
+import 'package:azkary/app/views/sleep_view/sleep_counter.dart';
 
-class PrayerAzkar extends StatelessWidget {
-  const PrayerAzkar({super.key});
+
+class SleepAzkar extends StatelessWidget {
+  const SleepAzkar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xffF7FFE5),
-
         body: Column(
           children: [
             const Padding(
+
               padding: EdgeInsets.symmetric(vertical: 8.0),
             ),
             Expanded(
               child: ListView.separated(
+                  shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        navigate(context, PrayerCounter(
-                            azkarConten: azkarPrayer[index],
-                            azkarContenDes: azkarPrayerDes[index],
-                            azkarContenRepate: azkarPrayerRepate[index]));
+                        navigate(context, SleepCounter(
+                            azkarConten: azkarSleep[index],
+                            azkarContenDes: azkarSleepDes[index],
+                            azkarContenRepate: azkarSleepRepate[index]));
                       },
                       child: AzkerItemBuilder(
-                          azkarTitle: azkarPrayer[index],
-                          azkarDes: azkarPrayerDes[index],
-                          azkarRepate: azkarPrayerRepate[index]),
+                          azkarTitle: azkarSleep[index],
+                          azkarDes: azkarSleepDes[index],
+                          azkarRepate: azkarSleepRepate[index]),
                     );
                   },
                   separatorBuilder: (context, index) =>
                   const SizedBox(
                     height: 15,
                   ),
-                  itemCount: azkarPrayer.length),
+                  itemCount: azkarSleep.length),
             )
           ],
         ));

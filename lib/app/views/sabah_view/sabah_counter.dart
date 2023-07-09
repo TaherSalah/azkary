@@ -32,7 +32,7 @@ class _SabahCounterState extends State<SabahCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('اذكار الصباح'),
+          appBar: customAppBar('أذكار الصباح'),
           body: SingleChildScrollView(
             child: Stack(
               alignment: Alignment.center,

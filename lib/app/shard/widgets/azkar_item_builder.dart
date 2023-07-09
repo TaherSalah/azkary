@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../constanc/app_style.dart';
+import '../exports/all_exports.dart';
 
 class AzkerItemBuilder extends StatefulWidget {
   String azkarTitle;

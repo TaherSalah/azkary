@@ -1,21 +1,22 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 
-class MassaCounter extends StatefulWidget {
+
+class SleepCounter extends StatefulWidget {
   String azkarConten;
   String azkarContenDes;
   String azkarContenRepate;
 
-  MassaCounter(
+  SleepCounter(
       {super.key,
-      required this.azkarConten,
-      required this.azkarContenDes,
-      required this.azkarContenRepate});
+        required this.azkarConten,
+        required this.azkarContenDes,
+        required this.azkarContenRepate});
 
   @override
-  State<MassaCounter> createState() => _MassaCounterState();
+  State<SleepCounter> createState() => _SleepCounterState();
 }
 
-class _MassaCounterState extends State<MassaCounter> {
+class _SleepCounterState extends State<SleepCounter> {
   @override
   void initState() {
     super.initState();
@@ -31,7 +32,7 @@ class _MassaCounterState extends State<MassaCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('أذكار المساء'),
+          appBar: customAppBar('أذكار النوم'),
           body: SingleChildScrollView(
             child: Stack(
               alignment: Alignment.center,
@@ -40,8 +41,9 @@ class _MassaCounterState extends State<MassaCounter> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
                     SizedBox(
-                      height: 25.h,
+                      height: 45.h,
                     ),
                     Card(
                       elevation: 10,
@@ -127,3 +129,5 @@ class _MassaCounterState extends State<MassaCounter> {
     );
   }
 }
+
+

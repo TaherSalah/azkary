@@ -10,7 +10,6 @@ class AboutItemBuilder extends StatefulWidget {
 class _AboutItemBuilderState extends State<AboutItemBuilder> {
   @override
   Widget build(BuildContext context) {
-    int _pressCount = 0;
     return Container(
       color: const Color(0xffF7FFE5),
       child: Column(
@@ -32,9 +31,9 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
           SizedBox(
             height: 10.h,
           ),
-          Text('version : 2.0.0',
+          Text('version : 3.0.0',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 15.sp,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.normal,
                   color: Colors.grey)),
           SizedBox(

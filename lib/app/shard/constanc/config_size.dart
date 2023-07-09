@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+
+import '../exports/all_exports.dart';
 
 class SizeConfig {
   static MediaQueryData? _mediaQueryData;
