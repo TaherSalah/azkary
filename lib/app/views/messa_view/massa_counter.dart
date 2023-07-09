@@ -1,23 +1,21 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
-import 'package:azkary/app/shard/widgets/custom_app_bar.dart';
-import 'package:flutter/cupertino.dart';
 
-class AzkarSimpleCounter extends StatefulWidget {
+class MassaCounter extends StatefulWidget {
   String azkarConten;
   String azkarContenDes;
   String azkarContenRepate;
 
-  AzkarSimpleCounter(
+  MassaCounter(
       {super.key,
       required this.azkarConten,
       required this.azkarContenDes,
       required this.azkarContenRepate});
 
   @override
-  State<AzkarSimpleCounter> createState() => _AzkarSimpleCounterState();
+  State<MassaCounter> createState() => _MassaCounterState();
 }
 
-class _AzkarSimpleCounterState extends State<AzkarSimpleCounter> {
+class _MassaCounterState extends State<MassaCounter> {
   @override
   void initState() {
     super.initState();
@@ -32,8 +30,8 @@ class _AzkarSimpleCounterState extends State<AzkarSimpleCounter> {
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          backgroundColor: Color(AppStyle.primaryColor),
-          appBar: customAppBar('اذكار الصباح'),
+          backgroundColor: const Color(AppStyle.primaryColor),
+          appBar: customAppBar('اذكار المساء'),
           body: SingleChildScrollView(
             child: Stack(
               alignment: Alignment.center,
@@ -42,10 +40,9 @@ class _AzkarSimpleCounterState extends State<AzkarSimpleCounter> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                        SizedBox(
-                            height: 45.h,
-                          ),
+                    SizedBox(
+                      height: 25.h,
+                    ),
                     Card(
                       elevation: 10,
                       color: Colors.black.withOpacity(0.5),
@@ -120,12 +117,8 @@ class _AzkarSimpleCounterState extends State<AzkarSimpleCounter> {
                     ),
                   ],
                 ),
+                ////*** show dialog in ui ****///
                 controller.showDialog()
-                // controller.counter == 10
-                //     ? CupertinoAlertDialog(
-                //   insetAnimationDuration: Duration(seconds: 5),
-                //   title: Text('عظيم لقد وصلت الي 100 تسبيحه',style: GoogleFonts.cairo(),),
-                // ):Container()
               ],
             ),
           ),
@@ -134,5 +127,3 @@ class _AzkarSimpleCounterState extends State<AzkarSimpleCounter> {
     );
   }
 }
-
-

@@ -1,4 +1,6 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
+import 'package:azkary/app/shard/navigation.dart';
+import 'package:azkary/app/views/prayer_count.dart';
 
 class PrayerAzkar extends StatelessWidget {
   const PrayerAzkar({super.key});
@@ -9,25 +11,34 @@ class PrayerAzkar extends StatelessWidget {
         backgroundColor: const Color(0xffF7FFE5),
 
         body: Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0),
-        ),
-        Expanded(
-          child: ListView.separated(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) {
-                return AzkerItemBuilder(
-                    azkarTitle: azkarPrayer[index],
-                    azkarDes: azkarPrayerDes[index],
-                    azkarRepate: azkarPrayerRepate[index]);
-              },
-              separatorBuilder: (context, index) => const SizedBox(
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+            ),
+            Expanded(
+              child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        navigate(context, PrayerCounter(
+                            azkarConten: azkarPrayer[index],
+                            azkarContenDes: azkarPrayerDes[index],
+                            azkarContenRepate: azkarPrayerRepate[index]));
+                      },
+                      child: AzkerItemBuilder(
+                          azkarTitle: azkarPrayer[index],
+                          azkarDes: azkarPrayerDes[index],
+                          azkarRepate: azkarPrayerRepate[index]),
+                    );
+                  },
+                  separatorBuilder: (context, index) =>
+                  const SizedBox(
                     height: 15,
                   ),
-              itemCount: azkarPrayer.length),
-        )
-      ],
-    ));
+                  itemCount: azkarPrayer.length),
+            )
+          ],
+        ));
   }
 }

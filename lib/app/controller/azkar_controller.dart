@@ -67,14 +67,13 @@ class AzkarProvider extends ChangeNotifier {
 //
 // }
 
-
   ///******      *******//////
 
   Widget showDialog() {
     // if(counter ==10){
     // var count = (counter/10+1);
-    if (counter == 10) {
-      return alertDefDialog('10', 'تسبيحات');
+    if (counter == 50) {
+      return alertDefDialog('50', 'تسبيحات');
     } else if (counter == 100) {
       return alertDefDialog('100', 'تسبيحة');
     } else if (counter == 300) {
@@ -94,16 +93,19 @@ class AzkarProvider extends ChangeNotifier {
 }
 
 Widget alertDefDialog(String number, String type) {
-  return AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      elevation: 20,
-      title: Column(
-        children: [
-          Image.asset(doneGif),
-          Text(
-            'رائع لقد وصلت الي$numberتسبيحه',
-            style: GoogleFonts.cairo(),
-          ),
-        ],
-      ));
+  return AnimatedContainer(
+    duration: const Duration(seconds: 20),
+    child: AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        elevation: 20,
+        title: Column(
+          children: [
+            Image.asset(doneGif),
+            Text(
+              'رائع لقد وصلت الي$numberتسبيحه',
+              style: GoogleFonts.cairo(),
+            ),
+          ],
+        )),
+  );
 }

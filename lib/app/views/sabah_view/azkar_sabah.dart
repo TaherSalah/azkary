@@ -1,7 +1,5 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
-import 'package:azkary/app/shard/navigation.dart';
-import 'package:azkary/app/views/done.dart';
-import 'package:azkary/app/views/simple_count.dart';
+
 
 class AzkarSabah extends StatefulWidget {
   const AzkarSabah({super.key});
@@ -43,7 +41,7 @@ class _AzkarSabahState extends State<AzkarSabah> {
                       onTap: () {
                         navigate(
                             context,
-                            AzkarSimpleCounter(
+                            SabahCounter(
                               azkarConten: azkarSabah[index],
                               azkarContenDes: azkarSabahDes[index],
                               azkarContenRepate: azkarSabahRepate[index],

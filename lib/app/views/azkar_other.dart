@@ -1,4 +1,6 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
+import 'package:azkary/app/shard/navigation.dart';
+import 'package:azkary/app/views/other_count.dart';
 
 class AzkarOthers extends StatelessWidget {
   const AzkarOthers({super.key});
@@ -17,14 +19,23 @@ class AzkarOthers extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return buildOtherZakarItem(
-                      azkarOtherTitle: azkarOtherTitle[index],
-                      azkarOtherDesc: azkarOtherDesc[index],
-                      azkarRepate: azkarRepate[index]);
+                  return GestureDetector(
+                    onTap: () {
+                      navigate(context, OtherCounter(
+                          azkarConten: azkarOtherTitle[index],
+                          azkarContenDes: azkarOtherDesc[index],
+                          azkarContenRepate:  azkarRepate[index]));
+                    },
+                    child: buildOtherZakarItem(
+                        azkarOtherTitle: azkarOtherTitle[index],
+                        azkarOtherDesc: azkarOtherDesc[index],
+                        azkarRepate: azkarRepate[index]),
+                  );
                 },
-                separatorBuilder: (context, index) => const SizedBox(
-                      height: 15,
-                    ),
+                separatorBuilder: (context, index) =>
+                const SizedBox(
+                  height: 15,
+                ),
                 itemCount: azkarOtherTitle.length),
           )
         ],
@@ -49,7 +60,7 @@ Widget buildOtherZakarItem({
               elevation: 14,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
                 child: Column(
                   children: [
                     Text(azkarOtherTitle,
