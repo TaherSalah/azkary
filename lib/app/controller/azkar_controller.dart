@@ -52,7 +52,6 @@ class AzkarProvider extends ChangeNotifier {
   incrementCount() {
     counter++;
 
-
     notifyListeners();
   }
 
@@ -69,13 +68,42 @@ class AzkarProvider extends ChangeNotifier {
 // }
 
 
-  showDaialog(){
-    if(counter ==10){
-      return CupertinoAlertDialog(
-        insetAnimationDuration: Duration(seconds: 5),
-        title: Text('عظيم لقد وصلت الي 100 تسبيحه',style: GoogleFonts.cairo(),),
-      );
-    }
-  }
+  ///******      *******//////
 
+  Widget showDialog() {
+    // if(counter ==10){
+    // var count = (counter/10+1);
+    if (counter == 10) {
+      return alertDefDialog('10', 'تسبيحات');
+    } else if (counter == 100) {
+      return alertDefDialog('100', 'تسبيحة');
+    } else if (counter == 300) {
+      return alertDefDialog('300', 'تسبيحة');
+    } else if (counter == 500) {
+      return alertDefDialog('500', 'تسبيحة');
+    } else if (counter == 1000) {
+      return alertDefDialog('1000', 'تسبيحة');
+    } else if (counter == 10000) {
+      return alertDefDialog('10000', 'تسبيحة');
+    } else if (counter == 20000) {
+      return alertDefDialog('20000', 'تسبيحة');
+    }
+    return const SizedBox();
+    // }
+  }
+}
+
+Widget alertDefDialog(String number, String type) {
+  return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation: 20,
+      title: Column(
+        children: [
+          Image.asset(doneGif),
+          Text(
+            'رائع لقد وصلت الي$numberتسبيحه',
+            style: GoogleFonts.cairo(),
+          ),
+        ],
+      ));
 }

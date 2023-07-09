@@ -120,11 +120,12 @@ class _AzkarSimpleCounterState extends State<AzkarSimpleCounter> {
                     ),
                   ],
                 ),
-                controller.counter == 10
-                    ? CupertinoAlertDialog(
-                  insetAnimationDuration: Duration(seconds: 5),
-                  title: Text('عظيم لقد وصلت الي 100 تسبيحه',style: GoogleFonts.cairo(),),
-                ):Container()
+                controller.showDialog()
+                // controller.counter == 10
+                //     ? CupertinoAlertDialog(
+                //   insetAnimationDuration: Duration(seconds: 5),
+                //   title: Text('عظيم لقد وصلت الي 100 تسبيحه',style: GoogleFonts.cairo(),),
+                // ):Container()
               ],
             ),
           ),
