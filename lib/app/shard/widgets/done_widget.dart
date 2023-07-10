@@ -1,3 +1,4 @@
+
 import '../exports/all_exports.dart';
 
 
@@ -10,7 +11,8 @@ class DoneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      appBar:customAppBar('تهنئة لك'),
       body: Directionality(
         textDirection: TextDirection.rtl,
         child: Column(
@@ -18,7 +20,7 @@ class DoneScreen extends StatelessWidget {
           children: [
             Center(
                 child: Image.asset(
-              doneGif,
+                  doneZakar,
             )),
             SizedBox(
               height: 10.h,
@@ -32,12 +34,19 @@ class DoneScreen extends StatelessWidget {
             ),
             Text(
               'فضل الالتزام باذكار الصباح والمساء',
-              style: GoogleFonts.cairo(),
+              style: GoogleFonts.cairo(color: Colors.green,fontWeight: FontWeight.bold),
+            ),
+             SizedBox(height: 10.h,),
+             Divider(
+              color: Color(AppStyle.primaryColor),
+              thickness: 2,
+indent: 150,
+              endIndent: 150,
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Text(
-                'المحافظة على ذكر الله تعالى فيها خيرا كثيرا في هذه الحياة وأجرا عظيما في الآخرة، وأذكار الصباح والمساء من أهم الأذكار التي ينبغي للمسلم أن يحافظ عليها. فمن فوائدها انشراح الصدر وطمأنينة القلب ومعية الله تعالى وذكره للعبد في الملأ الأعلى قال الله تعالى: الَّذِينَ آمَنُواْ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللّهِ أَلاَ بِذِكْرِ اللّهِ تَطْمَئِنُّ الْقُلُوبُ {الرعد:28}.\n وقال رسول الله صلى الله عليه وسلم: يقول الله عز وجل أنا عند ظن عبدي بي، وأنا معه حين يذكرني إن ذكرني في نفسه ذكرته في نفسي، وإن ذكرني في ملأ ذكرته في ملأ هم خير منهم. الحديث رواه مسلم وغيره.',
+                doneText,
                 textAlign: TextAlign.justify,
                 style: TextStyle(fontFamily: AppStyle.fontFamily,height: 1.8.h),
               ),

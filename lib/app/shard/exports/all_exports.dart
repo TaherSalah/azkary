@@ -48,3 +48,4 @@ export 'package:azkary/app/views/sabah_view/azkar_sabah.dart';
 export 'package:azkary/app/views/messa_view/massa_counter.dart';
 export 'package:azkary/app/views/prayer_view/prayer_count.dart';
 export 'package:azkary/app/views/other_view/other_count.dart';
+export 'package:azkary/app/shard/constanc/app_string.dart';

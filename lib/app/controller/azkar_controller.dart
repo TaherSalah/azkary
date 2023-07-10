@@ -60,21 +60,24 @@ class AzkarProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-// removeZakar(index){
-//
-//   azkarSabahRepate.remove(index);
-//   notifyListeners();
-//
-// }
+removeCount(){
+  counter=0;
+
+
+  notifyListeners();
+
+}
 
   ///******      *******//////
 
   Widget showDialog() {
     // if(counter ==10){
     // var count = (counter/10+1);
-    if (counter == 50) {
-      return alertDefDialog('50', 'تسبيحات');
-    } else if (counter == 100) {
+    if (counter == 10) {
+      return alertDefDialog('10', 'تسبيحات');
+    } else if (counter == 50) {
+      return alertDefDialog('50', 'تسبيحة');
+    }else if (counter == 100) {
       return alertDefDialog('100', 'تسبيحة');
     } else if (counter == 300) {
       return alertDefDialog('300', 'تسبيحة');
@@ -84,7 +87,7 @@ class AzkarProvider extends ChangeNotifier {
       return alertDefDialog('1000', 'تسبيحة');
     } else if (counter == 10000) {
       return alertDefDialog('10000', 'تسبيحة');
-    } else if (counter == 20000) {
+    } else if (counter == 1) {
       return alertDefDialog('20000', 'تسبيحة');
     }
     return const SizedBox();
@@ -102,8 +105,8 @@ Widget alertDefDialog(String number, String type) {
           children: [
             Image.asset(doneGif),
             Text(
-              'رائع لقد وصلت الي$numberتسبيحه',
-              style: GoogleFonts.cairo(),
+              ' رائع لقد وصلت الي $number $type ',
+              style: GoogleFonts.cairo(fontSize: 15,fontWeight: FontWeight.bold),
             ),
           ],
         )),
