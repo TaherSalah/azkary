@@ -1,7 +1,4 @@
-
 import 'package:azkary/app/shard/exports/all_exports.dart';
-
-
 
 class CounterWidgetBuilder extends StatefulWidget {
   const CounterWidgetBuilder({super.key});
@@ -9,7 +6,6 @@ class CounterWidgetBuilder extends StatefulWidget {
   @override
   State<CounterWidgetBuilder> createState() => _CounterWidgetBuilderState();
 }
-
 
 class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
   @override
@@ -104,7 +100,8 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                     Text(azkarDescription[index],
                                         textAlign: TextAlign.center,
                                         style: GoogleFonts.cairo(
-                                            fontSize: 15, color: Colors.white)),
+                                            fontSize: 15.sp,
+                                            color: Colors.white)),
                                     // Text('" ${azkarContent[index]} "',
                                     //     style: GoogleFonts.cairo(
                                     //         fontSize: 15,
@@ -126,7 +123,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
               Text('المسبحةُ الالكترونية',
                   style: GoogleFonts.cairo(
                       fontSize: 30.sp,
-                      color: Colors.white,
+                      color: Colors.green.shade100,
                       fontWeight: FontWeight.bold)),
               countDivider(),
               SizedBox(
@@ -159,16 +156,17 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                      style:  ButtonStyle(
+                      style: ButtonStyle(
                           shape: MaterialStatePropertyAll(
                               BeveledRectangleBorder(
                                   borderRadius:
                                       const BorderRadius.all(Radius.circular(
-                                    10,
+                                    8,
                                   )),
                                   side: BorderSide(
-                                    width: 1.5.w,
-                                      color: const Color(AppStyle.whiteColor)))),
+                                      width: 1.5.w,
+                                      color:
+                                          const Color(AppStyle.whiteColor)))),
                           backgroundColor: const MaterialStatePropertyAll(
                               Color(AppStyle.secondaryColor))),
                       onPressed: () {
@@ -178,21 +176,20 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                           style: GoogleFonts.cairo(
                               fontSize: 25.sp, color: Colors.black))),
                   SizedBox(
-                    width: 30.w,
+                    width: 85.w,
                   ),
                   ElevatedButton(
-
                       style: ButtonStyle(
-                          shape:  MaterialStatePropertyAll(
+                          shape: MaterialStatePropertyAll(
                               BeveledRectangleBorder(
                                   borderRadius:
-                                  const BorderRadius.all(Radius.circular(
-                                    10,
+                                      const BorderRadius.all(Radius.circular(
+                                    8,
                                   )),
                                   side: BorderSide(
                                       width: 1.5.w,
-                                      color: const Color(AppStyle.whiteColor)))),
-
+                                      color:
+                                          const Color(AppStyle.whiteColor)))),
                           elevation: const MaterialStatePropertyAll(8),
                           backgroundColor: MaterialStatePropertyAll(
                               const Color(AppStyle.primaryColor)
@@ -202,20 +199,17 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                       },
                       child: Row(
                         children: [
-                          Text('اعد من الصفر',
+                          Text('تصفير',
                               style: GoogleFonts.cairo(
                                   fontSize: 25.sp, color: Colors.black)),
-                          SizedBox(
-                            width: 15.w,
-                          ),
-                          const Icon(Icons.restart_alt_rounded)
                         ],
                       ))
                 ],
               ),
             ],
           ),
-        )
+        ),
+        controller.showDialog()
       ]),
     );
   }

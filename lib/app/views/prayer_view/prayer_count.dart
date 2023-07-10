@@ -88,7 +88,7 @@ class _PrayerCounterState extends State<PrayerCounter> {
                               )),
                         ),
                         SizedBox(
-                          width: 30.w,
+                          width: 150.w,
                         ),
                         GestureDetector(
                           onTap: () {
@@ -113,7 +113,7 @@ class _PrayerCounterState extends State<PrayerCounter> {
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        radius: 30,
+                        radius: 25,
                         child: Image.asset(leftArrow),
                       ),
                     ),

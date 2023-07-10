@@ -88,7 +88,7 @@ class _SleepCounterState extends State<SleepCounter> {
                               )),
                         ),
                         SizedBox(
-                          width: 30.w,
+                          width: 150.w,
                         ),
                         GestureDetector(
                           onTap: () {
@@ -113,7 +113,7 @@ class _SleepCounterState extends State<SleepCounter> {
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        radius: 30,
+                        radius: 25,
                         child: Image.asset(leftArrow),
                       ),
                     ),

@@ -88,7 +88,8 @@ class _RokiaCounterState extends State<RokiaCounter> {
                               )),
                         ),
                         SizedBox(
-                          width: 30.w,
+                          width: 150.w,
+
                         ),
                         GestureDetector(
                           onTap: () {
@@ -113,7 +114,7 @@ class _RokiaCounterState extends State<RokiaCounter> {
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        radius: 30,
+                        radius: 25,
                         child: Image.asset(leftArrow),
                       ),
                     ),

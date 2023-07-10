@@ -86,7 +86,7 @@ class _MassaCounterState extends State<MassaCounter> {
                               )),
                         ),
                         SizedBox(
-                          width: 30.w,
+                          width: 150.w,
                         ),
                         GestureDetector(
                           onTap: () {
@@ -111,7 +111,7 @@ class _MassaCounterState extends State<MassaCounter> {
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        radius: 30,
+                        radius: 25,
                         child: Image.asset(leftArrow),
                       ),
                     ),
