@@ -11,7 +11,6 @@ class AzkarSabah extends StatefulWidget {
 class _AzkarSabahState extends State<AzkarSabah> {
   @override
   Widget build(BuildContext context) {
-    final cont = Provider.of<AzkarProvider>(context);
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(AppStyle.primaryColor),
@@ -29,8 +28,8 @@ class _AzkarSabahState extends State<AzkarSabah> {
         transitionOnUserGestures: true,
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+             Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0.w),
             ),
             Expanded(
               child: ListView.separated(
@@ -53,8 +52,8 @@ class _AzkarSabahState extends State<AzkarSabah> {
                           azkarRepate: azkarSabahRepate[index]),
                     );
                   },
-                  separatorBuilder: (context, index) => const SizedBox(
-                        height: 15,
+                  separatorBuilder: (context, index) =>  SizedBox(
+                        height: 15.h,
                       ),
                   itemCount: azkarSabah.length),
             )

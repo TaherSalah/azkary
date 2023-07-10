@@ -10,8 +10,8 @@ class AzkarMassa extends StatelessWidget {
         backgroundColor: const Color(0xffF7FFE5),
         body: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0.w),
             ),
             Expanded(
               child: ListView.separated(
@@ -33,8 +33,8 @@ class AzkarMassa extends StatelessWidget {
                           azkarRepate: azkarMassaRepate[index]),
                     );
                   },
-                  separatorBuilder: (context, index) => const SizedBox(
-                        height: 15,
+                  separatorBuilder: (context, index) => SizedBox(
+                        height: 15.h,
                       ),
                   itemCount: azkarMassa.length),
             )

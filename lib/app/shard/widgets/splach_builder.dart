@@ -12,8 +12,8 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: double.infinity,
+      width: double.infinity.w,
+      height: double.infinity.h,
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,8 +23,8 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
       children: [
       Image.asset(
         azkaryLogo,
-        height: 400.0,
-        width: 300.0,
+        height: 400.0.h,
+        width: 300.0.w,
       ),
       ],
     ),
@@ -40,12 +40,12 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
         ),
       ),
     ),
-    const SizedBox(
-    height: 50,
-    width: 50,
-    child: CircularProgressIndicator(
-    color: Color(AppStyle.secondaryColor),
-    strokeWidth: 10,
+     SizedBox(
+    height: 50.h,
+    width: 50.w,
+    child:  CircularProgressIndicator(
+    color: const Color(AppStyle.secondaryColor),
+    strokeWidth: 10.w,
     )),
     ],
     ),

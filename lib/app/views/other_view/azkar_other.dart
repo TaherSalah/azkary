@@ -9,8 +9,8 @@ class AzkarOthers extends StatelessWidget {
       backgroundColor: const Color(0xffF7FFE5),
       body: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0.w),
           ),
           Expanded(
             child: ListView.separated(
@@ -19,10 +19,12 @@ class AzkarOthers extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      navigate(context, OtherCounter(
-                          azkarConten: azkarOtherTitle[index],
-                          azkarContenDes: azkarOtherDesc[index],
-                          azkarContenRepate:  azkarRepate[index]));
+                      navigate(
+                          context,
+                          OtherCounter(
+                              azkarConten: azkarOtherTitle[index],
+                              azkarContenDes: azkarOtherDesc[index],
+                              azkarContenRepate: azkarRepate[index]));
                     },
                     child: buildOtherZakarItem(
                         azkarOtherTitle: azkarOtherTitle[index],
@@ -30,10 +32,9 @@ class AzkarOthers extends StatelessWidget {
                         azkarRepate: azkarRepate[index]),
                   );
                 },
-                separatorBuilder: (context, index) =>
-                const SizedBox(
-                  height: 15,
-                ),
+                separatorBuilder: (context, index) => SizedBox(
+                      height: 15.h,
+                    ),
                 itemCount: azkarOtherTitle.length),
           )
         ],
@@ -58,7 +59,7 @@ Widget buildOtherZakarItem({
               elevation: 14,
               child: Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
                 child: Column(
                   children: [
                     Text(azkarOtherTitle,

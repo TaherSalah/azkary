@@ -19,11 +19,11 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
           ),
           Center(
             child: SizedBox(
-              height: 150,
-              width: 150,
+              height: 150.h,
+              width: 150.w,
               child: Image.asset(
                 azkaryLogo,
-                height: 150,
+                height: 150.h,
                 fit: BoxFit.cover,
               ),
             ),
@@ -78,8 +78,8 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                     'برنامج أذكار المسلم اليوميةُ هو رفيق كل مسلم الذي لايمكنك الاستغناء عنه في يومك حيث يذكرك بالاذكار التي يسن لكل مسلم ان يكون علي دراية بها من أذكار الصباح وأذكار المساء والاذكار المفروضة عقب كل صلاه كما يمكن التسبيح داخل البرنامج ومعرفة العدد الذي اتممتة من التسبيح.',
                     style: GoogleFonts.notoKufiArabic(fontSize: 14.sp),
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height: 10.h,
                   ),
                   Row(
                     children: [
@@ -111,7 +111,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 18.0),
+                    padding: EdgeInsets.symmetric(vertical: 18.0.w),
                     child: Text(
                       textAlign: TextAlign.justify,
                       selectionColor: Colors.amber,
@@ -135,16 +135,15 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                   ),
                   Center(
                     child: SizedBox(
-                      height: 150,
-                      width: 150,
+                      height: 150.h,
+                      width: 150.w,
                       child: Image.asset(
                         devLogo,
-                        height: 150,
+                        height: 150.h,
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),

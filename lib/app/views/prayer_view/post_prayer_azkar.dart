@@ -10,8 +10,8 @@ class PrayerAzkar extends StatelessWidget {
 
         body: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+             Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0.w),
             ),
             Expanded(
               child: ListView.separated(
@@ -31,8 +31,8 @@ class PrayerAzkar extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (context, index) =>
-                  const SizedBox(
-                    height: 15,
+                   SizedBox(
+                    height: 15.h,
                   ),
                   itemCount: azkarPrayer.length),
             )

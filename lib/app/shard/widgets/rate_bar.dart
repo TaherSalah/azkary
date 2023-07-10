@@ -12,7 +12,7 @@ class RetBar extends StatelessWidget {
       direction: Axis.horizontal,
       allowHalfRating: true,
       itemCount: 5,
-      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+      itemPadding:  EdgeInsets.symmetric(horizontal: 4.0.w),
       itemBuilder: (context, _) => const Icon(
         Icons.star,
         color: Colors.amber,
