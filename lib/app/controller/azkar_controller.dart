@@ -60,13 +60,16 @@ class AzkarProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-removeCount(){
-  counter=0;
+  removeCount() {
+    counter = 0;
 
-
-  notifyListeners();
-
-}
+    notifyListeners();
+  }
+  //
+  // notificationPlay() async {
+  //
+  //   notifyListeners();
+  // }
 
   ///******      *******//////
 
@@ -77,7 +80,7 @@ removeCount(){
       return alertDefDialog('10', 'تسبيحات');
     } else if (counter == 50) {
       return alertDefDialog('50', 'تسبيحة');
-    }else if (counter == 100) {
+    } else if (counter == 100) {
       return alertDefDialog('100', 'تسبيحة');
     } else if (counter == 300) {
       return alertDefDialog('300', 'تسبيحة');
@@ -87,7 +90,7 @@ removeCount(){
       return alertDefDialog('1000', 'تسبيحة');
     } else if (counter == 10000) {
       return alertDefDialog('10000', 'تسبيحة');
-    } else if (counter == 1) {
+    } else if (counter == 20000) {
       return alertDefDialog('20000', 'تسبيحة');
     }
     return const SizedBox();
@@ -106,7 +109,8 @@ Widget alertDefDialog(String number, String type) {
             Image.asset(doneGif),
             Text(
               ' رائع لقد وصلت الي $number $type ',
-              style: GoogleFonts.cairo(fontSize: 15,fontWeight: FontWeight.bold),
+              style:
+                  GoogleFonts.cairo(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ],
         )),
