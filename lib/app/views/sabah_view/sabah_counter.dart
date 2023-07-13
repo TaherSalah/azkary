@@ -36,7 +36,19 @@ class _SabahCounterState extends State<SabahCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('أذكار الصباح'),
+          appBar: customAppBar('أذكار الصباح', actions: [
+            IconButton(
+              onPressed: () {
+                zakarShared(
+                    azkarConten: widget.azkarConten,
+                    azkarContenDes: widget.azkarContenDes,
+                    azkarContenRepate: widget.azkarContenRepate,
+                    subjectType: ' أذكار الصباح',
+                    zakarType: ' أذكار الصباح');
+              },
+              icon: Icon(Icons.share),
+            ),
+          ]),
           body: SingleChildScrollView(
             child: Stack(
               alignment: Alignment.center,
@@ -67,10 +79,16 @@ class _SabahCounterState extends State<SabahCounter> {
                                 color: Colors.white)),
                       ),
                     ),
-                    AzkerItemBuilder(
-                        azkarTitle: widget.azkarConten,
-                        azkarDes: widget.azkarContenDes,
-                        azkarRepate: widget.azkarContenRepate),
+                    GestureDetector(
+                      onTap: () {
+
+                       controller.incrementCount();
+                      },
+                      child: AzkerItemBuilder(
+                          azkarTitle: widget.azkarConten,
+                          azkarDes: widget.azkarContenDes,
+                          azkarRepate: widget.azkarContenRepate),
+                    ),
                     SizedBox(
                       height: 20.h,
                     ),
@@ -120,32 +138,27 @@ class _SabahCounterState extends State<SabahCounter> {
                         child: Image.asset(leftArrow),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () async {
-                        // const urlPreview =
-                        //     'https://www.youtube.com/watch?v=3yCm7d_';
-                        // final url = Uri.parse(
-                        //     'https://i.dummyjson.com/data/products/1/1.jpg');
-                        // final resp = await http.get(url);
-                        // final bytes = resp.bodyBytes;
-                        // final temp = await getTemporaryDirectory();
-                        // //== after temp path write image name and extaintion this name is display when share  ==//
-                        // final path = '${temp.path}/iphon image.jpg';
-
-                        // File(path).writeAsBytesSync(bytes);
-                        // await Share.shareFiles([path], text:'this iphon new');
-
-                        zakarShared(
-                            azkarConten: widget.azkarConten,
-                            azkarContenDes: widget.azkarContenDes,
-                            azkarContenRepate: widget.azkarContenRepate,
-                            subjectType: ' أذكار الصباح',
-                            zakarType: ' أذكار الصباح');
-                      },
-                      child: const CircleAvatar(
-                          backgroundColor: Color(AppStyle.primaryColor),
-                          child: Icon(Icons.share)),
-                    ),
+                    // GestureDetector(
+                    //   onTap: () async {
+                    //     // const urlPreview =
+                    //     //     'https://www.youtube.com/watch?v=3yCm7d_';
+                    //     // final url = Uri.parse(
+                    //     //     'https://i.dummyjson.com/data/products/1/1.jpg');
+                    //     // final resp = await http.get(url);
+                    //     // final bytes = resp.bodyBytes;
+                    //     // final temp = await getTemporaryDirectory();
+                    //     // //== after temp path write image name and extaintion this name is display when share  ==//
+                    //     // final path = '${temp.path}/iphon image.jpg';
+                    //
+                    //     // File(path).writeAsBytesSync(bytes);
+                    //     // await Share.shareFiles([path], text:'this iphon new');
+                    //
+                    //
+                    //   },
+                    //   child: const CircleAvatar(
+                    //       backgroundColor: Color(AppStyle.primaryColor),
+                    //       child: Icon(Icons.share)),
+                    // ),
                   ],
                 ),
                 ////*** show dialog in ui ****///

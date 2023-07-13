@@ -73,10 +73,15 @@ class _SleepCounterState extends State<SleepCounter> {
                                 color: Colors.white)),
                       ),
                     ),
-                    AzkerItemBuilder(
-                        azkarTitle: widget.azkarConten,
-                        azkarDes: widget.azkarContenDes,
-                        azkarRepate: widget.azkarContenRepate),
+                    GestureDetector(onTap:() {
+                      controller.incrementCount();
+
+                    },
+                      child: AzkerItemBuilder(
+                          azkarTitle: widget.azkarConten,
+                          azkarDes: widget.azkarContenDes,
+                          azkarRepate: widget.azkarContenRepate),
+                    ),
                     SizedBox(
                       height: 20.h,
                     ),

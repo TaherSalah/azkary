@@ -33,7 +33,19 @@ class _OtherCounterState extends State<OtherCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('أدعية وأذكار مختارة'),
+          appBar: customAppBar('أدعية وأذكار مختارة', actions: [
+              IconButton(
+              onPressed: () {
+        zakarShared(
+        azkarConten: widget.azkarConten,
+        azkarContenDes: widget.azkarContenDes,
+        azkarContenRepate: widget.azkarContenRepate,
+        subjectType: 'الاذكار المختارة',
+        zakarType: 'الاذكار المختارة');
+        },
+          icon: Icon(Icons.share),
+        ),
+          ]),
           body: SingleChildScrollView(
             child: Stack(
               alignment: Alignment.center,
@@ -64,10 +76,16 @@ class _OtherCounterState extends State<OtherCounter> {
                                 color: Colors.white)),
                       ),
                     ),
-                    AzkerItemBuilder(
-                        azkarTitle: widget.azkarConten,
-                        azkarDes: widget.azkarContenDes,
-                        azkarRepate: widget.azkarContenRepate),
+                    GestureDetector(
+                      onTap: () {
+                        controller.incrementCount();
+
+                      },
+                      child: AzkerItemBuilder(
+                          azkarTitle: widget.azkarConten,
+                          azkarDes: widget.azkarContenDes,
+                          azkarRepate: widget.azkarContenRepate),
+                    ),
                     SizedBox(
                       height: 20.h,
                     ),

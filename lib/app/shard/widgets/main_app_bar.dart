@@ -10,7 +10,7 @@ PreferredSizeWidget mainAppBarWidget(){
     ),
     title: Text(
       'أذكار المسلم اليومية',
-      style: GoogleFonts.cairo(fontSize: 20.sp,fontWeight: FontWeight.bold),
+      style: GoogleFonts.cairo(fontSize: 17.sp,fontWeight: FontWeight.bold),
     ),
     // backgroundColor: Colors.amber.withOpacity(0.8),
     backgroundColor: const Color(0xffE1ECC8),
