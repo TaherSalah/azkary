@@ -1,6 +1,5 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 
-
 class SleepCounter extends StatefulWidget {
   String azkarConten;
   String azkarContenDes;
@@ -8,9 +7,9 @@ class SleepCounter extends StatefulWidget {
 
   SleepCounter(
       {super.key,
-        required this.azkarConten,
-        required this.azkarContenDes,
-        required this.azkarContenRepate});
+      required this.azkarConten,
+      required this.azkarContenDes,
+      required this.azkarContenRepate});
 
   @override
   State<SleepCounter> createState() => _SleepCounterState();
@@ -32,7 +31,18 @@ class _SleepCounterState extends State<SleepCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('أذكار النوم'),
+          appBar: customAppBar('أذكار النوم', actions: [
+            IconButton(
+                onPressed: () {
+                  zakarShared(
+                      azkarConten: widget.azkarConten,
+                      azkarContenDes: widget.azkarContenDes,
+                      azkarContenRepate: widget.azkarContenRepate,
+                      zakarType: 'أذكار النوم',
+                      subjectType: 'أذكار النوم');
+                },
+                icon: Icon(Icons.share))
+          ]),
           body: SingleChildScrollView(
             child: Stack(
               alignment: Alignment.center,
@@ -41,7 +51,6 @@ class _SleepCounterState extends State<SleepCounter> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
                     SizedBox(
                       height: 45.h,
                     ),
@@ -129,5 +138,3 @@ class _SleepCounterState extends State<SleepCounter> {
     );
   }
 }
-
-

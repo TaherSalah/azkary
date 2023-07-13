@@ -2,8 +2,10 @@ import '../exports/all_exports.dart';
 
 
 
-PreferredSizeWidget customAppBar(String title){
+PreferredSizeWidget customAppBar(String title, {Widget? leading,List<Widget>? actions}){
   return AppBar(
+    actions: actions,
+    leading: leading,
     systemOverlayStyle: const SystemUiOverlayStyle(
       statusBarColor: Color(0xffE1ECC8),
     ),

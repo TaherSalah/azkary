@@ -41,11 +41,9 @@ class _SplashItemBuilderState extends State<SplashItemBuilder> {
       ),
     ),
      SizedBox(
-    height: 50.h,
-    width: 50.w,
     child:  CircularProgressIndicator(
     color: const Color(AppStyle.secondaryColor),
-    strokeWidth: 10.w,
+    strokeWidth: 5.w,
     )),
     ],
     ),

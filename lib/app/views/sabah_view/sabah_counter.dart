@@ -1,5 +1,9 @@
-import 'package:azkary/app/shard/exports/all_exports.dart';
+import 'dart:io';
 
+import 'package:azkary/app/shard/exports/all_exports.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:http/http.dart' as http;
 
 class SabahCounter extends StatefulWidget {
   String azkarConten;
@@ -41,10 +45,9 @@ class _SabahCounterState extends State<SabahCounter> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                        SizedBox(
-                            height: 45.h,
-                          ),
+                    SizedBox(
+                      height: 45.h,
+                    ),
                     Card(
                       elevation: 10,
                       color: Colors.black.withOpacity(0.5),
@@ -117,6 +120,32 @@ class _SabahCounterState extends State<SabahCounter> {
                         child: Image.asset(leftArrow),
                       ),
                     ),
+                    GestureDetector(
+                      onTap: () async {
+                        // const urlPreview =
+                        //     'https://www.youtube.com/watch?v=3yCm7d_';
+                        // final url = Uri.parse(
+                        //     'https://i.dummyjson.com/data/products/1/1.jpg');
+                        // final resp = await http.get(url);
+                        // final bytes = resp.bodyBytes;
+                        // final temp = await getTemporaryDirectory();
+                        // //== after temp path write image name and extaintion this name is display when share  ==//
+                        // final path = '${temp.path}/iphon image.jpg';
+
+                        // File(path).writeAsBytesSync(bytes);
+                        // await Share.shareFiles([path], text:'this iphon new');
+
+                        zakarShared(
+                            azkarConten: widget.azkarConten,
+                            azkarContenDes: widget.azkarContenDes,
+                            azkarContenRepate: widget.azkarContenRepate,
+                            subjectType: ' أذكار الصباح',
+                            zakarType: ' أذكار الصباح');
+                      },
+                      child: const CircleAvatar(
+                          backgroundColor: Color(AppStyle.primaryColor),
+                          child: Icon(Icons.share)),
+                    ),
                   ],
                 ),
                 ////*** show dialog in ui ****///
@@ -129,5 +158,3 @@ class _SabahCounterState extends State<SabahCounter> {
     );
   }
 }
-
-

@@ -1,5 +1,6 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:share_plus/share_plus.dart';
 
 class AzkarProvider extends ChangeNotifier {
   AzkarRemoteServices azkarRemoteServices = AzkarRemoteServices();
@@ -65,6 +66,7 @@ class AzkarProvider extends ChangeNotifier {
 
     notifyListeners();
   }
+
   //
   // notificationPlay() async {
   //
@@ -96,6 +98,18 @@ class AzkarProvider extends ChangeNotifier {
     return const SizedBox();
     // }
   }
+}
+
+zakarShared(
+    {required String azkarConten,
+    required String azkarContenDes,
+    required String azkarContenRepate,
+    required zakarType,
+    required subjectType}) {
+  Share.share(
+    subject: subjectType,
+    ' من $zakarType \n\n${azkarConten}\n\n${azkarContenDes}  \n\nمرات التكرار:  ${azkarContenRepate}',
+  );
 }
 
 Widget alertDefDialog(String number, String type) {
