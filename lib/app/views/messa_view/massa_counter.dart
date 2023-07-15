@@ -31,18 +31,18 @@ class _MassaCounterState extends State<MassaCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('أذكار المساء', actions: [
-              IconButton(
+          appBar: customAppBar(AppString.KMessa, actions: [
+            IconButton(
               onPressed: () {
-        zakarShared(
-        azkarConten: widget.azkarConten,
-        azkarContenDes: widget.azkarContenDes,
-        azkarContenRepate: widget.azkarContenRepate,
-        subjectType: ' أذكار المساء',
-        zakarType: ' أذكار المساء');
-        },
-          icon: Icon(Icons.share),
-        ),
+                zakarShared(
+                    azkarConten: widget.azkarConten,
+                    azkarContenDes: widget.azkarContenDes,
+                    azkarContenRepate: widget.azkarContenRepate,
+                    subjectType: AppString.KMessa,
+                    zakarType: AppString.KMessa);
+              },
+              icon: const Icon(Icons.share),
+            ),
           ]),
           body: SingleChildScrollView(
             child: Stack(
@@ -58,9 +58,9 @@ class _MassaCounterState extends State<MassaCounter> {
                     Card(
                       elevation: 10,
                       color: Colors.black.withOpacity(0.5),
-                      shape: const OutlineInputBorder(
+                      shape:  OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color(AppStyle.whiteColor), width: 5)),
+                              color: const Color(AppStyle.whiteColor), width: 5.w)),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(22),
@@ -77,7 +77,6 @@ class _MassaCounterState extends State<MassaCounter> {
                     GestureDetector(
                       onTap: () {
                         controller.incrementCount();
-
                       },
                       child: AzkerItemBuilder(
                           azkarTitle: widget.azkarConten,
@@ -97,7 +96,7 @@ class _MassaCounterState extends State<MassaCounter> {
                           },
                           child: CircleAvatar(
                               backgroundColor: Colors.transparent,
-                              radius: 30,
+                              radius: 30.r,
                               child: Image.asset(
                                 click,
                                 color: Colors.green,
@@ -112,7 +111,7 @@ class _MassaCounterState extends State<MassaCounter> {
                           },
                           child: CircleAvatar(
                               backgroundColor: Colors.transparent,
-                              radius: 30,
+                              radius: 30.r,
                               child: Image.asset(
                                 arrow,
                                 color: Colors.red.shade700,
@@ -129,7 +128,7 @@ class _MassaCounterState extends State<MassaCounter> {
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        radius: 25,
+                        radius: 25.r,
                         child: Image.asset(leftArrow),
                       ),
                     ),

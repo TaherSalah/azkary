@@ -7,7 +7,7 @@ class DoneScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: customAppBar('تهنئة لك'),
+      appBar: customAppBar(AppString.KForYou),
       body: SingleChildScrollView(
         child: Directionality(
           textDirection: TextDirection.rtl,
@@ -22,7 +22,7 @@ class DoneScreen extends StatelessWidget {
                 height: 10.h,
               ),
               Text(
-                'تهانينا باتمامك وردك اليومي من الاذكار',
+                AppString.KDaialogText,
                 style: GoogleFonts.cairo(
                     fontWeight: FontWeight.bold, fontSize: 15.sp),
               ),
@@ -30,9 +30,11 @@ class DoneScreen extends StatelessWidget {
                 height: 15.h,
               ),
               Text(
-                'فضل الالتزام باذكار الصباح والمساء',
+                AppString.KZakarFeatures,
                 style: GoogleFonts.cairo(
-                    color: Colors.green, fontWeight: FontWeight.bold,fontSize: 18.sp),
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.sp),
               ),
               SizedBox(
                 height: 10.h,
@@ -46,7 +48,7 @@ class DoneScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
-                  doneText,
+                  AppString.doneText,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                       fontFamily: AppStyle.fontFamily,

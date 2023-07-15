@@ -33,7 +33,7 @@ class _PrayerCounterState extends State<PrayerCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('أذكار بعد الصلاة المكتوبة'),
+          appBar: customAppBar(AppString.KPrayerAppBar),
           body: SingleChildScrollView(
             child: Stack(
               alignment: Alignment.center,
@@ -48,9 +48,9 @@ class _PrayerCounterState extends State<PrayerCounter> {
                     Card(
                       elevation: 10,
                       color: Colors.black.withOpacity(0.5),
-                      shape: const OutlineInputBorder(
+                      shape:  OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color(AppStyle.whiteColor), width: 5)),
+                              color:const Color(AppStyle.whiteColor), width: 5.w)),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(22),
@@ -87,7 +87,7 @@ class _PrayerCounterState extends State<PrayerCounter> {
                           },
                           child: CircleAvatar(
                               backgroundColor: Colors.transparent,
-                              radius: 30,
+                              radius: 30.r,
                               child: Image.asset(
                                 click,
                                 color: Colors.green,
@@ -102,7 +102,7 @@ class _PrayerCounterState extends State<PrayerCounter> {
                           },
                           child: CircleAvatar(
                               backgroundColor: Colors.transparent,
-                              radius: 30,
+                              radius: 30.r,
                               child: Image.asset(
                                 arrow,
                                 color: Colors.red.shade700,
@@ -119,7 +119,7 @@ class _PrayerCounterState extends State<PrayerCounter> {
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        radius: 25,
+                        radius: 25.r,
                         child: Image.asset(leftArrow),
                       ),
                     ),

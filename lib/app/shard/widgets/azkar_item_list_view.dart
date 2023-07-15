@@ -76,10 +76,6 @@ class AzkarListViewItemBuilder extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.cairo(
                                       fontSize: 15, color: Colors.white)),
-                              // Text('" ${azkarContent[index]} "',
-                              //     style: GoogleFonts.cairo(
-                              //         fontSize: 15,
-                              //         color: Colors.amber.shade100)),
                               Text('  مرات التسبيح(${azkarCount[index]})\ مرة',
                                   style: GoogleFonts.cairo(
                                       fontSize: 12,

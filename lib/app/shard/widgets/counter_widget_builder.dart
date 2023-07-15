@@ -59,7 +59,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                       titleTextStyle: const TextStyle(),
                                       title: Text(
                                           textAlign: TextAlign.center,
-                                          'فضل الذكر ',
+                                          AppString.KFadlZakar,
                                           style: GoogleFonts.cairo(
                                               color: Colors.black)),
                                       content: Directionality(
@@ -76,7 +76,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                                 backgroundColor:
                                                     MaterialStatePropertyAll(
                                                         Color(0xffF7FFE5))),
-                                            child: const Text('تـــــم'),
+                                            child: const Text(AppString.KDone),
                                           ),
                                         ),
                                       ],
@@ -102,10 +102,6 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                         style: GoogleFonts.cairo(
                                             fontSize: 15.sp,
                                             color: Colors.white)),
-                                    // Text('" ${azkarContent[index]} "',
-                                    //     style: GoogleFonts.cairo(
-                                    //         fontSize: 15,
-                                    //         color: Colors.amber.shade100)),
                                     Text(
                                         '  مرات التسبيح(${azkarCount[index]})\ مرة',
                                         style: GoogleFonts.cairo(
@@ -120,7 +116,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                     }),
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 7)),
-              Text('المسبحةُ الالكترونية',
+              Text(AppString.KCounter,
                   style: GoogleFonts.cairo(
                       fontSize: 30.sp,
                       color: Colors.green.shade100,
@@ -172,7 +168,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                       onPressed: () {
                         controller.incrementCount();
                       },
-                      child: Text('سبٌح',
+                      child: Text(AppString.KSabahText,
                           style: GoogleFonts.cairo(
                               fontSize: 25.sp, color: Colors.black))),
                   SizedBox(

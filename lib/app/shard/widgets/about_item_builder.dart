@@ -31,8 +31,12 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
           SizedBox(
             height: 10.h,
           ),
-          Text('version : 3.0.0',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+          Text(AppString.KAppVersion,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.normal,
                   color: Colors.grey)),
@@ -44,7 +48,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
             children: [
               Icon(Icons.copyright_sharp, size: 20.sp),
               Text(
-                'All Rights Reserved by Dev Taher Salah \u{1f60e}',
+                AppString.KAppRights,
                 style: GoogleFonts.merienda(fontSize: 10.sp),
               ),
             ],
@@ -61,7 +65,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'عن البرنامج',
+                          AppString.KAppAbout,
                           style: GoogleFonts.cairo(
                               fontWeight: FontWeight.bold, fontSize: 15.sp),
                         ),
@@ -75,10 +79,10 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                   Text(
                     textAlign: TextAlign.justify,
                     selectionColor: Colors.amber,
-                    'برنامج أذكار المسلم اليوميةُ هو رفيق كل مسلم الذي لايمكنك الاستغناء عنه في يومك حيث يذكرك بالاذكار التي يسن لكل مسلم ان يكون علي دراية بها من أذكار الصباح وأذكار المساء والاذكار المفروضة عقب كل صلاه كما يمكن التسبيح داخل البرنامج ومعرفة العدد الذي اتممتة من التسبيح.',
+                    AppString.KAboutText,
                     style: GoogleFonts.notoKufiArabic(fontSize: 14.sp),
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 10.h,
                   ),
                   Row(
@@ -87,7 +91,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                       Padding(
                         padding: const EdgeInsets.all(7.0),
                         child: Text(
-                          'تقييم التطبيق',
+                          AppString.KAppRate,
                           style: GoogleFonts.cairo(
                               fontWeight: FontWeight.bold, fontSize: 16.sp),
                         ),
@@ -102,7 +106,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                       Padding(
                         padding: const EdgeInsets.all(7.0),
                         child: Text(
-                          'صدقة جارية',
+                          AppString.KSadka,
                           style: GoogleFonts.cairo(
                               fontWeight: FontWeight.bold, fontSize: 16.sp),
                         ),
@@ -115,7 +119,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                     child: Text(
                       textAlign: TextAlign.justify,
                       selectionColor: Colors.amber,
-                      'برنامج أذكار المسلم اليوميةُ هو صدقة جارية لكل اموات المسلمين ولكل من شارك هذا التطبيق لوجه الله تعالي.',
+                      AppString.KAboutText2,
                       style: GoogleFonts.notoKufiArabic(fontSize: 14.sp),
                     ),
                   ),
@@ -125,7 +129,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
                       Padding(
                         padding: const EdgeInsets.all(7.0),
                         child: Text(
-                          'تطوير',
+                          AppString.KDevlop,
                           style: GoogleFonts.cairo(
                               fontWeight: FontWeight.bold, fontSize: 16.sp),
                         ),

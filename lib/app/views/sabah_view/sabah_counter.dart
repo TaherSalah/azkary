@@ -36,15 +36,15 @@ class _SabahCounterState extends State<SabahCounter> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           backgroundColor: const Color(AppStyle.primaryColor),
-          appBar: customAppBar('أذكار الصباح', actions: [
+          appBar: customAppBar(AppString.Ksabah, actions: [
             IconButton(
               onPressed: () {
                 zakarShared(
                     azkarConten: widget.azkarConten,
                     azkarContenDes: widget.azkarContenDes,
                     azkarContenRepate: widget.azkarContenRepate,
-                    subjectType: ' أذكار الصباح',
-                    zakarType: ' أذكار الصباح');
+                    subjectType: AppString.Ksabah,
+                    zakarType: AppString.Ksabah,);
               },
               icon: Icon(Icons.share),
             ),
@@ -81,8 +81,7 @@ class _SabahCounterState extends State<SabahCounter> {
                     ),
                     GestureDetector(
                       onTap: () {
-
-                       controller.incrementCount();
+                        controller.incrementCount();
                       },
                       child: AzkerItemBuilder(
                           azkarTitle: widget.azkarConten,
