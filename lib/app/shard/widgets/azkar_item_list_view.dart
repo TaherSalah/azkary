@@ -52,7 +52,7 @@ class AzkarListViewItemBuilder extends StatelessWidget {
                                           backgroundColor:
                                               MaterialStatePropertyAll(
                                                   Color(0xffF7FFE5))),
-                                      child: const Text('تـــــم'),
+                                      child: const Text(AppString.KAppRate),
                                     ),
                                   ),
                                 ],
