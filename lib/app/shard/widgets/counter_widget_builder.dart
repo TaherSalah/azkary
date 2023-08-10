@@ -20,12 +20,12 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
 
     return Card(
       child: Stack(alignment: Alignment.center, children: [
-        Image.asset(
-          'assets/images/countBg.jpg',
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.cover,
-        ),
+        // Image.asset(
+        //   'assets/images/countBg.jpg',
+        //   width: double.infinity,
+        //   height: double.infinity,
+        //   fit: BoxFit.cover,
+        // ),
         SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

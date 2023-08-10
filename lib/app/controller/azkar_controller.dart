@@ -1,5 +1,6 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:share_plus/share_plus.dart';
 
 class AzkarProvider extends ChangeNotifier {
@@ -11,7 +12,18 @@ class AzkarProvider extends ChangeNotifier {
   List<Content> azkarSabahList = [];
   List<Content> azkarPostPrayerList = [];
   List<Empty> test = [];
+  List<Color>prayerColor=[
+
+    const Color(0xff5ACC05),
+    const Color(0xffCE82FF),
+    const Color(0xff1CB0F6),
+    const Color(0xff5ACC05),
+    const Color(0xff5ACC05),
+    const Color(0xff3F2305),
+  ];
+
   bool isLoading = false;
+  double long = 0, lat = 0;
 
   fetchAzkarMassa() async {
     isLoading = true;
@@ -48,7 +60,41 @@ class AzkarProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+
+
+
+
+  locationAccess()async {
+    isLoading =true;
+    LocationPermission permission = await Geolocator.checkPermission();
+
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        print('Location permissions are denied');
+      }else if(permission == LocationPermission.deniedForever){
+        print("'Location permissions are permanently denied");
+      }else{
+        print("GPS Location service is granted");
+      }
+    }else{
+      print("GPS Location permission granted.");
+    }
+    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    long = position.longitude;
+    lat = position.latitude;
+    isLoading =true;
+
+    print(position.longitude); //Output: 80.24599079
+    print(position.latitude); //Output: 29.6593457
+  }
+
+
+
+
+
   ///**** counter methods ****///
+
 
   incrementCount() {
     counter++;

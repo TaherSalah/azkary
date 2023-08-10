@@ -1,4 +1,5 @@
 import 'package:azkary/app/shard/exports/all_exports.dart';
+import 'package:azkary/app/views/azan_view/azan.dart';
 
 class DefControllerTabs extends StatelessWidget {
   const DefControllerTabs({super.key});
@@ -6,7 +7,7 @@ class DefControllerTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 8,
+      length: 9,
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -20,6 +21,8 @@ class DefControllerTabs extends StatelessWidget {
               AzkarOthers(),
               RokiaScreen(),
               AzkarCounter(),
+
+              Azan(),
               About(),
             ],
           ),

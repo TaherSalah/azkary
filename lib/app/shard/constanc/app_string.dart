@@ -6,7 +6,7 @@ class AppString {
   static const String KAboutText2 =
       'برنامج أذكار المسلم اليوميةُ هو صدقة جارية لكل اموات المسلمين ولكل من شارك هذا التطبيق لوجه الله تعالي.';
   static const String KAppRate = 'تقييم التطبيق';
-  static const String KAppVersion = 'version : 1.0.2';
+  static const String KAppVersion = 'version : 1.0.3';
   static const String KAppRights =  'All Rights Reserved by Dev Taher Salah \u{1f60e}';
   static const String KPrayerAppBar =  'أذكار بعد الصلاة المكتوبة';
   static const String KAppAbout = 'عن البرنامج';
@@ -21,11 +21,13 @@ class AppString {
   static const String KCounter = 'المسبحةُ الالكترونية';
   static const String KSabahText = 'سبٌح';
   static const String KAbout = 'عنـــــا';
+  static const String KAzan = 'مواقيت الصلاة';
   static const String KDaialogText = 'تهانينا باتمامك وردك اليومي من الاذكار';
   static const String KForYou = 'تهنئة لك';
   static const String KZakarFeatures = 'فضل الالتزام باذكار الصباح والمساء';
   static const String KFadlZakar = 'فضل الذكر';
   static const String KDone = 'تـــــم';
+  static const String KLocation = 'تحديد المواقيت تلقائياً';
   static const String KSplashHadith =
       '(سبَق المُفرِّدونَ سبَق المُفرِّدونَ )\n قالوا : يا رسولَ اللهِ ما المُفرِّدونَ ؟ \n قال :( الذَّاكرونَ اللهَ كثيرًا والذَّاكراتُ)';
 }

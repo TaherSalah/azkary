@@ -53,6 +53,10 @@ PreferredSizeWidget mainAppBarWidget() {
                 style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
           ),
           Tab(
+            child: Text(AppString.KAzan,
+                style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
+          ),
+          Tab(
             child: Text(AppString.KAbout,
                 style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
           ),

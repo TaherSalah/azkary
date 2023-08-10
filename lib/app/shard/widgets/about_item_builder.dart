@@ -24,7 +24,7 @@ class _AboutItemBuilderState extends State<AboutItemBuilder> {
               child: Image.asset(
                 azkaryLogo,
                 height: 150.h,
-                fit: BoxFit.cover,
+
               ),
             ),
           ),
