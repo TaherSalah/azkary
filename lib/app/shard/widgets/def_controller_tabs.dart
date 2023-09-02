@@ -14,6 +14,7 @@ class DefControllerTabs extends StatelessWidget {
           appBar: mainAppBarWidget(),
           body: const TabBarView(
             children: [
+              AzanView(),
               AzkarSabah(),
               AzkarMassa(),
               PrayerAzkar(),
@@ -21,8 +22,6 @@ class DefControllerTabs extends StatelessWidget {
               AzkarOthers(),
               RokiaScreen(),
               AzkarCounter(),
-
-              Azan(),
               About(),
             ],
           ),
