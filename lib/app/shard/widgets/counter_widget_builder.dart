@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:azkary/app/shard/exports/all_exports.dart';
 
 class CounterWidgetBuilder extends StatefulWidget {
@@ -20,12 +22,19 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
 
     return Card(
       child: Stack(alignment: Alignment.center, children: [
-        // Image.asset(
-        //   'assets/images/countBg.jpg',
-        //   width: double.infinity,
-        //   height: double.infinity,
-        //   fit: BoxFit.cover,
-        // ),
+        Image.asset(
+          'assets/images/countBg.jpg',
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        Positioned.fill(
+            child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+          child: Container(
+            color: Colors.transparent,
+          ),
+        )),
         SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +128,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
               Text(AppString.KCounter,
                   style: GoogleFonts.cairo(
                       fontSize: 30.sp,
-                      color: Colors.green.shade100,
+                      color: const Color(AppStyle.whiteColor),
                       fontWeight: FontWeight.bold)),
               countDivider(),
               SizedBox(
@@ -151,55 +160,80 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          shape: MaterialStatePropertyAll(
-                              BeveledRectangleBorder(
-                                  borderRadius:
-                                      const BorderRadius.all(Radius.circular(
-                                    8,
-                                  )),
-                                  side: BorderSide(
-                                      width: 1.5.w,
-                                      color:
-                                          const Color(AppStyle.whiteColor)))),
-                          backgroundColor: const MaterialStatePropertyAll(
-                              Color(AppStyle.secondaryColor))),
-                      onPressed: () {
-                        controller.incrementCount();
-                      },
-                      child: Text(AppString.KSabahText,
-                          style: GoogleFonts.cairo(
-                              fontSize: 25.sp, color: Colors.black))),
+                  InkWell(
+                    onTap: () {
+                      controller.incrementCount();
+                    },
+                    child: CircleAvatar(
+                        radius: 35,
+                        child: Text(AppString.KSabhText,
+                            style: GoogleFonts.cairo(
+                                fontSize: 23.sp, color: Colors.black))),
+                  ),
                   SizedBox(
                     width: 85.w,
                   ),
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          shape: MaterialStatePropertyAll(
-                              BeveledRectangleBorder(
-                                  borderRadius:
-                                      const BorderRadius.all(Radius.circular(
-                                    8,
-                                  )),
-                                  side: BorderSide(
-                                      width: 1.5.w,
-                                      color:
-                                          const Color(AppStyle.whiteColor)))),
-                          elevation: const MaterialStatePropertyAll(8),
-                          backgroundColor: MaterialStatePropertyAll(
-                              const Color(AppStyle.primaryColor)
-                                  .withOpacity(0.8))),
-                      onPressed: () {
-                        controller.restCount();
-                      },
-                      child: Row(
-                        children: [
-                          Text('تصفير',
-                              style: GoogleFonts.cairo(
-                                  fontSize: 25.sp, color: Colors.black)),
-                        ],
-                      ))
+                  InkWell(
+                    onTap: () {
+                      controller.restCount();
+                    },
+                    child: CircleAvatar(
+                        backgroundColor: const Color(AppStyle.greenColor),
+                        radius: 25.r,
+                        child: Text(AppString.KRestText,
+                            style: GoogleFonts.cairo(
+                                fontSize: 16.sp,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500))),
+                  ),
+                  //
+                  // ElevatedButton(
+                  //     style: ButtonStyle(
+                  //         shape: MaterialStatePropertyAll(
+                  //             BeveledRectangleBorder(
+                  //                 borderRadius:
+                  //                     const BorderRadius.all(Radius.circular(
+                  //                   0,
+                  //                 )),
+                  //                 side: BorderSide(
+                  //                     width: 1.5.w,
+                  //                     color:
+                  //                         const Color(AppStyle.whiteColor)))),
+                  //         backgroundColor: const MaterialStatePropertyAll(
+                  //             Color(AppStyle.secondaryColor))),
+                  //     onPressed: () {
+                  //       controller.incrementCount();
+                  //     },
+                  //     child: Text(AppString.KSabahText,
+                  //         style: GoogleFonts.cairo(
+                  //             fontSize: 25.sp, color: Colors.black))),
+
+                  // ElevatedButton(
+                  //     style: ButtonStyle(
+                  //         shape: MaterialStatePropertyAll(
+                  //             BeveledRectangleBorder(
+                  //                 borderRadius:
+                  //                     const BorderRadius.all(Radius.circular(
+                  //                   8,
+                  //                 )),
+                  //                 side: BorderSide(
+                  //                     width: 1.5.w,
+                  //                     color:
+                  //                         const Color(AppStyle.whiteColor)))),
+                  //         elevation: const MaterialStatePropertyAll(8),
+                  //         backgroundColor: MaterialStatePropertyAll(
+                  //             const Color(AppStyle.primaryColor)
+                  //                 .withOpacity(0.8))),
+                  //     onPressed: () {
+                  //       controller.restCount();
+                  //     },
+                  //     child: Row(
+                  //       children: [
+                  //         Text('تصفير',
+                  //             style: GoogleFonts.cairo(
+                  //                 fontSize: 25.sp, color: Colors.black)),
+                  //       ],
+                  //     ))
                 ],
               ),
             ],

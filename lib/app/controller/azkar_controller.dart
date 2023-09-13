@@ -61,7 +61,9 @@ class AzkarProvider extends ChangeNotifier {
   }
 
 
-
+mouns(){
+  notifyListeners();
+}
 
 
   locationAccess()async {

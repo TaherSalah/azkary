@@ -7,6 +7,7 @@ class RokiaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final con =Provider.of<AzkarProvider>(context);
     return Scaffold(
       backgroundColor: const Color(0xffF7FFE5),
       body: Column(
@@ -21,23 +22,25 @@ class RokiaScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      navigate(
-                          context,
-                          RokiaCounter(
-                              azkarConten: rokiaQuranTitle[index],
-                              azkarContenDes: rokiaQuranRawi[index],
-                              azkarContenRepate: rokiaQuranRepe[index]));
+                      print('object');
+                      con.mouns;
+                      // navigate(
+                      //     context,
+                      //     RokiaCounter(
+                      //         azkarConten: rokiaQuranTitle[index],
+                      //         azkarContenDes: rokiaQuranRawi[index],
+                      //         azkarContenRepate: '${rokiaQuranRepe[index]}'));
                     },
                     child: AzkerItemBuilder(
-                        azkarTitle: rokiaQuranTitle[index],
-                        azkarDes: rokiaQuranRawi[index],
-                        azkarRepate: rokiaQuranRepe[index]),
+                        azkarTitle: Azkary.rokiaQuranTitle[index],
+                        azkarDes: Azkary.rokiaQuranRawi[index],
+                        azkarRepate:'${Azkary.rokiaQuranRepe[index]}'),
                   );
                 },
                 separatorBuilder: (context, index) => SizedBox(
                       height: 15.h,
                     ),
-                itemCount: rokiaQuranTitle.length),
+                itemCount: Azkary.rokiaQuranTitle.length),
           )
         ],
       ),

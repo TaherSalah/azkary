@@ -13,3 +13,4 @@ const String bCounter = 'assets/images/counter g.png';
 const String bOther = 'assets/images/other.png';
 const String bAbout = 'assets/images/about_app.png';
 const String arrowLeft = 'assets/images/arrow-left.svg';
+const String bgAzan = 'assets/images/azzzzzan.jpg';

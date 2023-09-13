@@ -19,7 +19,8 @@ class AppString {
   static const String KOtherZakar = 'أذكار مختارة';
   static const String KRokia = 'الرقية الشرعية';
   static const String KCounter = 'المسبحةُ الالكترونية';
-  static const String KSabahText = 'سبٌح';
+  static const String KSabhText = 'سبٌح';
+  static const String KRestText = 'إعادة';
   static const String KAbout = 'عنـــــا';
   static const String KAzan = 'مواقيت الصلاة';
   static const String KDaialogText = 'تهانينا باتمامك وردك اليومي من الاذكار';

@@ -1,10 +1,8 @@
+import 'dart:ui';
 
 import 'package:azkary/app/shard/exports/all_exports.dart';
 import 'package:adhan/adhan.dart';
 import 'package:intl/intl.dart';
-import 'package:intl/intl.dart' as intl;
-
-import 'dart:ui' as ui;
 
 class AzanView extends StatefulWidget {
   const AzanView({Key? key}) : super(key: key);
@@ -15,19 +13,22 @@ class AzanView extends StatefulWidget {
 
 class _AzanViewState extends State<AzanView> {
   @override
-  Widget build(BuildContext context)  {
-    final con =Provider.of<AzkarProvider>(context).locationAccess();
-    final cond =Provider.of<AzkarProvider>(context);
-     final double let =cond.lat;
-     final double long =cond.long;
+  Widget build(BuildContext context) {
+    final con = Provider.of<AzkarProvider>(context).locationAccess();
+    final cond = Provider.of<AzkarProvider>(context);
+    final double let = cond.lat;
+    final double long = cond.long;
 
-    final perth = Coordinates(let,long,);
+    final perth = Coordinates(
+      let,
+      long,
+    );
 
     final nyParams = CalculationMethod.egyptian.getParameters();
 
     nyParams.madhab = Madhab.hanafi;
     final nyPrayerTimes = PrayerTimes.today(perth, nyParams);
-    var x  =  nyPrayerTimes.nextPrayer().toString().toUpperCase();
+    var x = nyPrayerTimes.nextPrayer().toString().toUpperCase();
     //print(nyPrayerTimes.fajr.timeZoneName);
     final String fajr = DateFormat.jm().format(nyPrayerTimes.fajr);
     final params = CalculationMethod.muslim_world_league.getParameters();
@@ -40,107 +41,142 @@ class _AzanViewState extends State<AzanView> {
     final String sunrise = DateFormat.jm().format(nyPrayerTimes.sunrise);
 
     return Scaffold(
+      body: Stack(
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            const SizedBox(height: 25,),
-            ElevatedButton(
+        children: [
+          Image.asset(
+            bgAzan,
+            // width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
+          ),
+          Positioned.fill(
+              child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+            child: Container(
+              color: Colors.transparent,
+            ),
+          )),
+          ListView(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            physics: const BouncingScrollPhysics(),
+            children: <Widget>[
 
-                style: ButtonStyle(
-                  padding: const MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 30,vertical: 15)),
-                    shape: MaterialStatePropertyAll(
-
-                        BeveledRectangleBorder(
-
-                            borderRadius:
-                            const BorderRadius.all(Radius.circular(
-                              8,
-                            )),
-                            side: BorderSide(
-                                width: 1.5.w,
-                                color:
-                                const Color(AppStyle.whiteColor)))),
-                    backgroundColor: const MaterialStatePropertyAll(
-                        Color(AppStyle.primaryColor))),
-                onPressed: () {
-                  cond.locationAccess();
-                },
-                child: Text(AppString.KLocation,
+               SizedBox(
+                height: 25.h,
+              ),
+              Center(
+                child: Text(AppString.KAzan,
                     style: GoogleFonts.cairo(
-                        fontSize: 15.sp, color: Colors.black))),
-            const SizedBox(height: 25,),
+                        fontSize: 30.sp,
+                        color: const Color(AppStyle.whiteColor),
+                        fontWeight: FontWeight.bold)),
+              ),
+              countDivider(),
 
-            Card(
-              color:  Color(AppStyle.secondaryColor),
-              child: ListTile(
-                title: Text(
-                  'الفجر',
-                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(fajr),
+               SizedBox(
+                height: 25.h,
               ),
-            ),
-            SizedBox(height: 15,),
-            Card(
-              color:  Color(AppStyle.secondaryColor),
-              child: ListTile(
-                title: Text(
-                  'الشروق',
-                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(sunrise),
+              azanContainerItemBuilder(azanTitle: 'الفجر', azanTime: fajr),
+              SizedBox(
+                height: 15.h,
               ),
-            ),
+              azanContainerItemBuilder(azanTitle: 'الشروق', azanTime: sunrise),
 
-            SizedBox(height: 15,),
-            Card(
-              color:  Color(AppStyle.secondaryColor),
-              child: ListTile(
-                title: Text(
-                  'الظهر',
-                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(dhuhr),
+              SizedBox(
+                height: 15.h,
               ),
-            ),
-            SizedBox(height: 15,),
-            Card(
-              color:  Color(AppStyle.secondaryColor),
-              child: ListTile(
-                title: Text(
-                  'العصر',
-                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(asr),
+              azanContainerItemBuilder(azanTitle: 'الظهر', azanTime: dhuhr),
+
+              SizedBox(
+                height: 15.h,
               ),
-            ),
-            SizedBox(height: 15,),
-            Card(
-              color:  Color(AppStyle.secondaryColor),
-              child: ListTile(
-                title: Text(
-                  'المغرب',
-                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(maghrib),
+              azanContainerItemBuilder(azanTitle: 'العصر', azanTime: asr),
+
+              SizedBox(
+                height: 15.h,
               ),
-            ),
-            SizedBox(height: 15,),
-            Card(
-              color:  Color(AppStyle.secondaryColor),
-              child: ListTile(
-                title: Text(
-                  'العشاء',
-                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(isha),
+              azanContainerItemBuilder(azanTitle: 'المغرب', azanTime: maghrib),
+
+              SizedBox(
+                height: 15.h,
               ),
-            ),
-          
-          ],
-        ),
+              azanContainerItemBuilder(azanTitle: 'العشاء', azanTime: isha),
+              SizedBox(
+                height: 15.h,
+              ),
+              InkWell(
+                onTap: () {
+                  cond.locationAccess();
+
+                },
+                child: CircleAvatar(
+                    radius: 30.r,
+
+                    backgroundColor: Color(AppStyle.secondaryColor).withOpacity(0.6),
+                    child: Text(' تحديث',
+                        style: GoogleFonts.cairo(
+                            fontSize: 15.sp, color: Colors.white))),
+              ),
+
+              // SizedBox(
+              //   width: 50,
+              //   child: ElevatedButton(
+              //       style: ButtonStyle(
+              //           padding:  MaterialStatePropertyAll(
+              //               EdgeInsets.symmetric(
+              //                   horizontal: 50.w, vertical: 12.h)),
+              //           shape: MaterialStatePropertyAll(
+              //               BeveledRectangleBorder(
+              //                   borderRadius:
+              //                    BorderRadius.all(Radius.circular(
+              //                     2.r,
+              //                   )),
+              //                   side: BorderSide(
+              //                       width: 1.5.w,
+              //                       color:
+              //                       const Color(AppStyle.whiteColor)))),
+              //           backgroundColor:  MaterialStatePropertyAll(
+              //               Colors.transparent
+              //           )),
+              //       onPressed: () {
+              //         cond.locationAccess();
+              //       },
+              //       child: Text(AppString.KLocation,
+              //           style: GoogleFonts.cairo(
+              //               fontSize: 15.sp, color: Colors.white))),
+              // ),
+
+            ],
+          ),
+        ],
       ),
     );
   }
+}
+
+Widget azanContainerItemBuilder({required String azanTitle,required String azanTime})
+{
+  return    Container(
+    decoration: BoxDecoration(
+        border: Border.all(color: const Color(AppStyle.primaryColor), width: 2.5.w),
+        borderRadius: BorderRadius.circular(10.r)),
+    child: ListTile(
+      title: Text(
+        azanTitle,
+        style: GoogleFonts.cairo(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.sp,
+            color: Colors.white),
+      ),
+      trailing: Text(
+        azanTime,
+        style: GoogleFonts.cairo(
+            fontWeight: FontWeight.w600,
+            fontSize: 16.5.sp,
+            color: Colors.white),
+      ),
+    ),
+  );
+
 }
