@@ -19,10 +19,7 @@ class _AzanViewState extends State<AzanView> {
     final double let = cond.lat;
     final double long = cond.long;
 
-    final perth = Coordinates(
-      let,
-      long,
-    );
+    final perth = Coordinates(long, let);
 
     final nyParams = CalculationMethod.egyptian.getParameters();
 
@@ -42,7 +39,6 @@ class _AzanViewState extends State<AzanView> {
 
     return Scaffold(
       body: Stack(
-
         children: [
           Image.asset(
             bgAzan,
@@ -61,8 +57,7 @@ class _AzanViewState extends State<AzanView> {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             physics: const BouncingScrollPhysics(),
             children: <Widget>[
-
-               SizedBox(
+              SizedBox(
                 height: 25.h,
               ),
               Center(
@@ -74,7 +69,7 @@ class _AzanViewState extends State<AzanView> {
               ),
               countDivider(),
 
-               SizedBox(
+              SizedBox(
                 height: 25.h,
               ),
               azanContainerItemBuilder(azanTitle: 'الفجر', azanTime: fajr),
@@ -112,8 +107,8 @@ class _AzanViewState extends State<AzanView> {
                 },
                 child: CircleAvatar(
                     radius: 30.r,
-
-                    backgroundColor: Color(AppStyle.secondaryColor).withOpacity(0.6),
+                    backgroundColor:
+                        Color(AppStyle.secondaryColor).withOpacity(0.6),
                     child: Text(' تحديث',
                         style: GoogleFonts.cairo(
                             fontSize: 15.sp, color: Colors.white))),
@@ -146,7 +141,6 @@ class _AzanViewState extends State<AzanView> {
               //           style: GoogleFonts.cairo(
               //               fontSize: 15.sp, color: Colors.white))),
               // ),
-
             ],
           ),
         ],
@@ -155,19 +149,18 @@ class _AzanViewState extends State<AzanView> {
   }
 }
 
-Widget azanContainerItemBuilder({required String azanTitle,required String azanTime})
-{
-  return    Container(
+Widget azanContainerItemBuilder(
+    {required String azanTitle, required String azanTime}) {
+  return Container(
     decoration: BoxDecoration(
-        border: Border.all(color: const Color(AppStyle.primaryColor), width: 2.5.w),
+        border:
+            Border.all(color: const Color(AppStyle.primaryColor), width: 2.5.w),
         borderRadius: BorderRadius.circular(10.r)),
     child: ListTile(
       title: Text(
         azanTitle,
         style: GoogleFonts.cairo(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.sp,
-            color: Colors.white),
+            fontWeight: FontWeight.bold, fontSize: 20.sp, color: Colors.white),
       ),
       trailing: Text(
         azanTime,
@@ -178,5 +171,4 @@ Widget azanContainerItemBuilder({required String azanTitle,required String azanT
       ),
     ),
   );
-
 }

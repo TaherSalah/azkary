@@ -5,6 +5,7 @@ class AzkarOthers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final con =Provider.of<AzkarProvider>(context);
     return Scaffold(
       backgroundColor: const Color(0xffF7FFE5),
       body: Column(
@@ -16,26 +17,24 @@ class AzkarOthers extends StatelessWidget {
             child: ListView.separated(
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) {
+                itemBuilder: (context, zOtherIndex) {
                   return GestureDetector(
                     onTap: () {
-                      navigate(
-                          context,
-                          OtherCounter(
-                              azkarConten: azkarOtherTitle[index],
-                              azkarContenDes: azkarOtherDesc[index],
-                              azkarContenRepate: azkarRepate[index]));
+                      con.decrementOther(zOtherIndex);
                     },
                     child: buildOtherZakarItem(
-                        azkarOtherTitle: azkarOtherTitle[index],
-                        azkarOtherDesc: azkarOtherDesc[index],
-                        azkarRepate: azkarRepate[index]),
+                        azkarOtherTitle: Azkary.azkarOtherTitle[zOtherIndex],
+                        azkarOtherDesc: Azkary.azkarOtherDesc[zOtherIndex],
+                        azkarRepate: con.zOtherIndex >= Azkary.azkarRepate[zOtherIndex]?"0": '${Azkary.azkarRepate[zOtherIndex]}',
+                      color: con.zOtherIndex >= Azkary.azkarRepate[zOtherIndex]?  const Color(AppStyle.yellowColor):const Color(AppStyle.primaryColor),
+
+                    ),
                   );
                 },
-                separatorBuilder: (context, index) => SizedBox(
+                separatorBuilder: (context, zOtherIndex) => SizedBox(
                       height: 15.h,
                     ),
-                itemCount: azkarOtherTitle.length),
+                itemCount: Azkary.azkarOtherTitle.length),
           )
         ],
       ),
@@ -44,6 +43,7 @@ class AzkarOthers extends StatelessWidget {
 }
 
 Widget buildOtherZakarItem({
+  Color ? color,
   required String azkarOtherTitle,
   required String azkarOtherDesc,
   required String azkarRepate,
@@ -72,7 +72,7 @@ Widget buildOtherZakarItem({
                     Text(
                       azkarOtherDesc,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'maja', fontSize: 17.sp),
+                      style: TextStyle(fontFamily: 'maja', fontSize: 18.sp),
                     ),
                     SizedBox(
                       height: 25.h,
@@ -83,12 +83,12 @@ Widget buildOtherZakarItem({
         ),
       ),
       CircleAvatar(
-        backgroundColor: const Color(AppStyle.primaryColor),
+        backgroundColor: color?? const Color(AppStyle.primaryColor),
         child: Text(
           azkarRepate,
           textAlign: TextAlign.start,
           style: GoogleFonts.cairo(
-              color: Colors.white, fontWeight: FontWeight.bold),
+              color:  Colors.white, fontWeight: FontWeight.bold),
         ),
       )
     ],

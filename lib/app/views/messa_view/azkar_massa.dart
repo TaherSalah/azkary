@@ -5,6 +5,7 @@ class AzkarMassa extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final con =Provider.of<AzkarProvider>(context);
     return Scaffold(
         // backgroundColor: Colors.black.withOpacity(0.1),
         backgroundColor: const Color(0xffF7FFE5),
@@ -17,26 +18,24 @@ class AzkarMassa extends StatelessWidget {
               child: ListView.separated(
                   shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
+                  itemBuilder: (context, zMessaIndex) {
                     return GestureDetector(
                       onTap: () {
-                        navigate(
-                            context,
-                            MassaCounter(
-                                azkarConten: azkarMassa[index],
-                                azkarContenDes: azkarMassaDes[index],
-                                azkarContenRepate: azkarMassaRepate[index]));
+                       con.decrementMessa(zMessaIndex);
                       },
                       child: AzkerItemBuilder(
-                          azkarTitle: azkarMassa[index],
-                          azkarDes: azkarMassaDes[index],
-                          azkarRepate: azkarMassaRepate[index]),
+                          azkarTitle: Azkary.azkarMassa[zMessaIndex],
+                          azkarDes: Azkary.azkarMassaDes[zMessaIndex],
+                          azkarRepate: con.zMessaIndex >= Azkary.azkarMassaRepate[zMessaIndex]?'0':'${Azkary.azkarMassaRepate[zMessaIndex]}',
+                        color: con.zMessaIndex >= Azkary.azkarMassaRepate[zMessaIndex]?  const Color(AppStyle.yellowColor):const Color(AppStyle.primaryColor),
+
+                      ),
                     );
                   },
-                  separatorBuilder: (context, index) => SizedBox(
+                  separatorBuilder: (context, zMessaIndex) => SizedBox(
                         height: 15.h,
                       ),
-                  itemCount: azkarMassa.length),
+                  itemCount: Azkary.azkarMassa.length),
             )
           ],
         ));

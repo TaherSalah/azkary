@@ -5,9 +5,10 @@ class AzkerItemBuilder extends StatefulWidget {
   String azkarTitle;
   String azkarDes;
   String azkarRepate;
-
+Color?color;
   AzkerItemBuilder(
       {super.key,
+        this.color,
       required this.azkarTitle,
       required this.azkarDes,
       required this.azkarRepate});
@@ -36,7 +37,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
                       Text(
                         widget.azkarTitle,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontFamily: AppStyle.fontFamily, fontSize: 17.sp,height: 1.8),
+                        style: TextStyle(fontFamily: AppStyle.fontFamily, fontSize: 18.sp,height: 1.8),
                       ),
                       SizedBox(
                         height: 10.h,
@@ -55,7 +56,7 @@ class _AzkerItemBuilderState extends State<AzkerItemBuilder> {
           ),
         ),
         CircleAvatar(
-          backgroundColor: const Color(AppStyle.primaryColor),
+          backgroundColor: widget.color ?? Color(AppStyle.primaryColor),
           child: Text(
             widget.azkarRepate,
             textAlign: TextAlign.start,

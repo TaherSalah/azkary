@@ -5,36 +5,46 @@ class PrayerAzkar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final con = Provider.of<AzkarProvider>(context);
+
     return Scaffold(
         backgroundColor: const Color(0xffF7FFE5),
-
         body: Column(
           children: [
-             Padding(
+            Padding(
               padding: EdgeInsets.symmetric(vertical: 8.0.w),
             ),
             Expanded(
               child: ListView.separated(
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
+                  itemBuilder: (context, zPrayerIndex) {
                     return GestureDetector(
                       onTap: () {
-                        navigate(context, PrayerCounter(
-                            azkarConten: azkarPrayer[index],
-                            azkarContenDes: azkarPrayerDes[index],
-                            azkarContenRepate: azkarPrayerRepate[index]));
+                        con.decrementPrayer(zPrayerIndex);
+
+                        // navigate(context, PrayerCounter(
+                        //     azkarConten: Azkary.azkarPrayer[index],
+                        //     azkarContenDes: Azkary.azkarPrayerDes[index],
+                        //     azkarContenRepate: '${Azkary.azkarPrayerRepate[index]}'));
                       },
                       child: AzkerItemBuilder(
-                          azkarTitle: azkarPrayer[index],
-                          azkarDes: azkarPrayerDes[index],
-                          azkarRepate: azkarPrayerRepate[index]),
+                        azkarTitle: Azkary.azkarPrayer[zPrayerIndex],
+                        azkarDes: Azkary.azkarPrayerDes[zPrayerIndex],
+                        azkarRepate: con.zPrayerIndex >=
+                                Azkary.azkarPrayerRepate[zPrayerIndex]
+                            ? '0'
+                            : '${Azkary.azkarPrayerRepate[zPrayerIndex]}',
+                        color: con.zPrayerIndex >=
+                                Azkary.azkarPrayerRepate[zPrayerIndex]
+                            ? const Color(AppStyle.yellowColor)
+                            : const Color(AppStyle.primaryColor),
+                      ),
                     );
                   },
-                  separatorBuilder: (context, index) =>
-                   SizedBox(
-                    height: 15.h,
-                  ),
-                  itemCount: azkarPrayer.length),
+                  separatorBuilder: (context, zPrayerIndex) => SizedBox(
+                        height: 15.h,
+                      ),
+                  itemCount: Azkary.azkarPrayer.length),
             )
           ],
         ));

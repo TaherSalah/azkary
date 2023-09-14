@@ -6,6 +6,7 @@ class SleepAzkar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final con = Provider.of<AzkarProvider>(context);
     return Scaffold(
         backgroundColor: const Color(0xffF7FFE5),
         body: Column(
@@ -17,26 +18,29 @@ class SleepAzkar extends StatelessWidget {
               child: ListView.separated(
                   shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
+                  itemBuilder: (context, zSleepIndex) {
                     return GestureDetector(
                       onTap: () {
-                        navigate(
-                            context,
-                            SleepCounter(
-                                azkarConten: azkarSleep[index],
-                                azkarContenDes: azkarSleepDes[index],
-                                azkarContenRepate: azkarSleepRepate[index]));
+                        con.decrementSleep(zSleepIndex);
                       },
                       child: AzkerItemBuilder(
-                          azkarTitle: azkarSleep[index],
-                          azkarDes: azkarSleepDes[index],
-                          azkarRepate: azkarSleepRepate[index]),
+                        azkarTitle: Azkary.azkarSleep[zSleepIndex],
+                        azkarDes: Azkary.azkarSleepDes[zSleepIndex],
+                        azkarRepate: con.zSleepIndex >=
+                                Azkary.azkarSleepRepate[zSleepIndex]
+                            ? '0'
+                            : '${Azkary.azkarSleepRepate[zSleepIndex]}',
+                        color: con.zSleepIndex >=
+                                Azkary.azkarSleepRepate[zSleepIndex]
+                            ? const Color(AppStyle.yellowColor)
+                            : const Color(AppStyle.primaryColor),
+                      ),
                     );
                   },
-                  separatorBuilder: (context, index) => SizedBox(
+                  separatorBuilder: (context, zSleepIndex) => SizedBox(
                         height: 15.h,
                       ),
-                  itemCount: azkarSleep.length),
+                  itemCount: Azkary.azkarSleep.length),
             )
           ],
         ));

@@ -40,7 +40,7 @@ class AzkarListViewItemBuilder extends StatelessWidget {
                                         GoogleFonts.cairo(color: Colors.black)),
                                 content: Directionality(
                                     textDirection: TextDirection.rtl,
-                                    child: Text(azkarContent[index],
+                                    child: Text(Azkary.azkarContent[index],
                                         style: GoogleFonts.cairo())),
                                 actions: <Widget>[
                                   Center(
@@ -72,11 +72,11 @@ class AzkarListViewItemBuilder extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(azkarDescription[index],
+                              Text(Azkary.azkarDescription[index],
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.cairo(
                                       fontSize: 15, color: Colors.white)),
-                              Text('  مرات التسبيح(${azkarCount[index]})\ مرة',
+                              Text('  مرات التسبيح(${Azkary.azkarCount[index]})\ مرة',
                                   style: GoogleFonts.cairo(
                                       fontSize: 12,
                                       color: Colors.white,
@@ -89,7 +89,7 @@ class AzkarListViewItemBuilder extends StatelessWidget {
                 separatorBuilder: (context, index) => const SizedBox(
                       width: 10,
                     ),
-                itemCount: azkarDescription.length)),
+                itemCount: Azkary.azkarDescription.length)),
       ],
     );
   }

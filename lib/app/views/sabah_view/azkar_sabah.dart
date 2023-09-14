@@ -7,10 +7,12 @@ class AzkarSabah extends StatefulWidget {
   @override
   State<AzkarSabah> createState() => _AzkarSabahState();
 }
+int index = 0;
 
 class _AzkarSabahState extends State<AzkarSabah> {
   @override
   Widget build(BuildContext context) {
+    final con =Provider.of<AzkarProvider>(context);
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(AppStyle.primaryColor),
@@ -35,27 +37,24 @@ class _AzkarSabahState extends State<AzkarSabah> {
               child: ListView.separated(
                   shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
+                  itemBuilder: (context, zSabahIndex) {
                     return GestureDetector(
                       onTap: () {
-                        navigate(
-                            context,
-                            SabahCounter(
-                              azkarConten: azkarSabah[index],
-                              azkarContenDes: azkarSabahDes[index],
-                              azkarContenRepate: azkarSabahRepate[index],
-                            ));
+                        con.decrementSabah(zSabahIndex);
                       },
                       child: AzkerItemBuilder(
-                          azkarTitle: azkarSabah[index],
-                          azkarDes: azkarSabahDes[index],
-                          azkarRepate: azkarSabahRepate[index]),
+                          azkarTitle: Azkary.azkarSabah[zSabahIndex],
+                          azkarDes: Azkary.azkarSabahDes[zSabahIndex],
+                          azkarRepate: con.zSabahIndex >= Azkary.azkarSabahRepate[zSabahIndex]?'0':'${Azkary.azkarSabahRepate[zSabahIndex]}',
+                        color: con.zSabahIndex >= Azkary.azkarSabahRepate[zSabahIndex]?  const Color(AppStyle.yellowColor):const Color(AppStyle.primaryColor),
+                      ),
+
                     );
                   },
-                  separatorBuilder: (context, index) =>  SizedBox(
+                  separatorBuilder: (context, zSabahIndex) =>  SizedBox(
                         height: 15.h,
                       ),
-                  itemCount: azkarSabah.length),
+                  itemCount: Azkary.azkarSabah.length),
             )
           ],
         ),

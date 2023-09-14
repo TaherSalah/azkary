@@ -7,14 +7,14 @@ class DefControllerTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 9,
+      length: 8,
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
           appBar: mainAppBarWidget(),
           body: const TabBarView(
             children: [
-              AzanView(),
+              // AzanView(),
               AzkarSabah(),
               AzkarMassa(),
               PrayerAzkar(),

@@ -11,6 +11,7 @@ class AppString {
   static const String KPrayerAppBar =  'أذكار بعد الصلاة المكتوبة';
   static const String KAppAbout = 'عن البرنامج';
   static const String KDevlop = 'تطوير';
+  static const String KContact = 'تواصل معنا';
   static const String KSadka = 'صدقة جارية';
   static const String Ksabah = 'أذكار الصباح';
   static const String KMessa = 'أذكار المساء';

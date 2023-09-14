@@ -49,7 +49,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                         ),
                     physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemCount: azkarContent.length,
+                    itemCount: Azkary.azkarContent.length,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return Container(
@@ -73,7 +73,7 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                               color: Colors.black)),
                                       content: Directionality(
                                           textDirection: TextDirection.rtl,
-                                          child: Text(azkarContent[index],
+                                          child: Text(Azkary.azkarContent[index],
                                               style: GoogleFonts.cairo())),
                                       actions: <Widget>[
                                         Center(
@@ -106,13 +106,13 @@ class _CounterWidgetBuilderState extends State<CounterWidgetBuilder> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(azkarDescription[index],
+                                    Text(Azkary.azkarDescription[index],
                                         textAlign: TextAlign.center,
                                         style: GoogleFonts.cairo(
                                             fontSize: 15.sp,
                                             color: Colors.white)),
                                     Text(
-                                        '  مرات التسبيح(${azkarCount[index]})\ مرة',
+                                        '  مرات التسبيح(${Azkary.azkarCount[index]})\ مرة',
                                         style: GoogleFonts.cairo(
                                             fontSize: 12.sp,
                                             color: Colors.white,

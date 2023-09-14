@@ -2,8 +2,28 @@ import 'package:azkary/app/shard/exports/all_exports.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AzkarProvider extends ChangeNotifier {
+
+
+
+
+
+
+
+
+  Future<void> launchInWeb(Uri url) async {
+    if (await launchUrl(
+      url,
+      mode: LaunchMode.externalNonBrowserApplication,
+    )) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
+
+
   AzkarRemoteServices azkarRemoteServices = AzkarRemoteServices();
   int counter = 0;
 
@@ -12,8 +32,7 @@ class AzkarProvider extends ChangeNotifier {
   List<Content> azkarSabahList = [];
   List<Content> azkarPostPrayerList = [];
   List<Empty> test = [];
-  List<Color>prayerColor=[
-
+  List<Color> prayerColor = [
     const Color(0xff5ACC05),
     const Color(0xffCE82FF),
     const Color(0xff1CB0F6),
@@ -60,43 +79,86 @@ class AzkarProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-
-mouns(){
-  notifyListeners();
-}
-
-
-  locationAccess()async {
-    isLoading =true;
+  locationAccess() async {
+    isLoading = true;
     LocationPermission permission = await Geolocator.checkPermission();
 
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         print('Location permissions are denied');
-      }else if(permission == LocationPermission.deniedForever){
+      } else if (permission == LocationPermission.deniedForever) {
         print("'Location permissions are permanently denied");
-      }else{
+      } else {
         print("GPS Location service is granted");
       }
-    }else{
+    } else {
       print("GPS Location permission granted.");
     }
-    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
     long = position.longitude;
     lat = position.latitude;
-    isLoading =true;
+    isLoading = true;
 
-    print(position.longitude); //Output: 80.24599079
-    print(position.latitude); //Output: 29.6593457
+    print('long is ${position.longitude}'); //Output: 80.24599079
+    print('late is ${position.latitude}'); //Output: 29.6593457
+  }
+
+  int quranIndex = 0;
+  int zSabahIndex = 0;
+  int zMessaIndex = 0;
+  int zSleepIndex = 0;
+  int zOtherIndex = 0;
+  int zPrayerIndex = 0;
+
+  decrementQuran(quranCurrentIndex) {
+    if (quranCurrentIndex >= 0 &&
+        quranCurrentIndex < Azkary.rokiaQuranRepe.length) {
+      Azkary.rokiaQuranRepe[quranCurrentIndex] -= 1;
+      notifyListeners();
+    }
+  }
+
+  decrementSabah(zSabahIndex) {
+    if (zSabahIndex >= 0 && zSabahIndex < Azkary.azkarSabahRepate.length) {
+      Azkary.azkarSabahRepate[zSabahIndex] -=1;
+      notifyListeners();
+    }
+  }
+
+  decrementMessa(zMessaIndex) {
+    if (zMessaIndex >= 0 && zMessaIndex < Azkary.azkarMassaRepate.length) {
+      Azkary.azkarMassaRepate[zMessaIndex] -=1;
+      notifyListeners();
+    }
+  }
+
+  decrementOther(zOtherIndex) {
+    if (zOtherIndex >= 0 && zOtherIndex < Azkary.azkarRepate.length) {
+      Azkary.azkarRepate[zOtherIndex] -=1;
+      notifyListeners();
+    }
+  }
+
+  decrementSleep(zSleepIndex){
+    if(zSleepIndex>= 0 && zSleepIndex< Azkary.azkarSleepRepate.length){
+      Azkary.azkarSleepRepate[zSleepIndex] -=1;
+      notifyListeners();
+    }
+  }
+
+  decrementPrayer(zPrayerIndex)
+  {
+    if(zPrayerIndex >= 0 && zPrayerIndex < Azkary.azkarPrayerRepate.length){
+
+      Azkary.azkarPrayerRepate[zPrayerIndex] -=1;
+      notifyListeners();
+    }
   }
 
 
-
-
-
   ///**** counter methods ****///
-
 
   incrementCount() {
     counter++;
