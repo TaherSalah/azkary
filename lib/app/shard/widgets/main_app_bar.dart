@@ -24,10 +24,10 @@ PreferredSizeWidget mainAppBarWidget() {
         isScrollable: true,
         physics: const BouncingScrollPhysics(),
         tabs: [
-          Tab(
-            child: Text(AppString.KAzan,
-                style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
-          ),
+          // Tab(
+          //   child: Text(AppString.KAzan,
+          //       style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
+          // ),
           Tab(
             child: Text(AppString.Ksabah,
                 style: GoogleFonts.cairo(fontWeight: FontWeight.w700)),
