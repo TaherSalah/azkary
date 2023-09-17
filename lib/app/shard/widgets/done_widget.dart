@@ -30,7 +30,7 @@ class DoneScreen extends StatelessWidget {
                 height: 15.h,
               ),
               Text(
-                AppString.KZakarFeatures,
+                AppString.KZakarSleepFeaturesDes,
                 style: GoogleFonts.cairo(
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
