@@ -34,7 +34,7 @@ class AppString {
   static const String KZakarSabahFeaturesTitle = 'فضل الالتزام باذكار الصباح';
   static const String KZakarMessaFeaturesTitle = 'فضل الالتزام باذكار المساء';
   static const String KZakarPrayerFeaturesTitle = 'فضل الالتزام باذكار الصلاة';
-  static const String KZakaFeaturesTitle = 'فضل الالتزام بالاذكار ';
+  static const String KZakarFeaturesTitle = 'فضل الالتزام بالاذكار ';
   static const String KZakarSleepFeaturesTitle = 'فضل الالتزام باذكار النوم';
   static const String KZakarSleepFeaturesDes = """
   : قال الإمام النووي رحمه الله: [كتاب آداب النوم والاضطجاع.

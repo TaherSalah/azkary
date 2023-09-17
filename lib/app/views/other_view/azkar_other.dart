@@ -7,8 +7,58 @@ class AzkarOthers extends StatelessWidget {
   Widget build(BuildContext context) {
     final con =Provider.of<AzkarProvider>(context);
     return Scaffold(
-      backgroundColor: const Color(0xffF7FFE5),
-      body: Column(
+      backgroundColor: Azkary.azkarRepate.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
+      body:Azkary.azkarRepate.isNotEmpty? Center(
+        child:  SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                  child: Image.asset(
+                    doneZakar,
+                  )),
+              SizedBox(
+                height: 10.h,
+              ),
+              Text(
+                AppString.KAzkarDaialogText,
+                style: GoogleFonts.cairo(
+                    fontWeight: FontWeight.bold, fontSize: 15.sp),
+              ),
+              SizedBox(
+                height: 15.h,
+              ),
+              Text(
+                AppString.KZakarFeaturesTitle,
+                style: GoogleFonts.cairo(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.sp),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              const Divider(
+                color: Color(AppStyle.primaryColor),
+                thickness: 2,
+                indent: 150,
+                endIndent: 150,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  AppString.doneText,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                      fontFamily: AppStyle.fontFamily,
+                      height: 1.8.h,
+                      fontSize: 17.5.sp),
+                ),
+              )
+            ],
+          ),
+        ),
+      ) :   Column(
         children: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0.w),
