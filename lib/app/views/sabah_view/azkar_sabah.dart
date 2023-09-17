@@ -24,7 +24,7 @@ class _AzkarSabahState extends State<AzkarSabah> {
       //     color: Color(AppStyle.whiteColor),
       //   ),
       // ),
-      backgroundColor: Azkary.azkarSabahRepate.isNotEmpty? Colors.white : Color(0xffF7FFE5),
+      backgroundColor: Azkary.azkarSabahRepate.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
       body: Hero(
         tag: 'sabah',
         transitionOnUserGestures: true,
@@ -41,7 +41,7 @@ class _AzkarSabahState extends State<AzkarSabah> {
                   height: 10.h,
                 ),
                 Text(
-                  AppString.KDaialogText,
+                  AppString.KSabahDaialogText,
                   style: GoogleFonts.cairo(
                       fontWeight: FontWeight.bold, fontSize: 15.sp),
                 ),

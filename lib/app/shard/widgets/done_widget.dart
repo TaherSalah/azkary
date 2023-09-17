@@ -22,7 +22,7 @@ class DoneScreen extends StatelessWidget {
                 height: 10.h,
               ),
               Text(
-                AppString.KDaialogText,
+                AppString.KSabahDaialogText,
                 style: GoogleFonts.cairo(
                     fontWeight: FontWeight.bold, fontSize: 15.sp),
               ),
