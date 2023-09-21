@@ -7,8 +7,8 @@ class AzkarOthers extends StatelessWidget {
   Widget build(BuildContext context) {
     final con =Provider.of<AzkarProvider>(context);
     return Scaffold(
-      backgroundColor: Azkary.azkarRepate.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
-      body:Azkary.azkarRepate.isNotEmpty? Center(
+      backgroundColor: Azkary.azkarRepate.isEmpty? Colors.white : const Color(0xffF7FFE5),
+      body:Azkary.azkarRepate.isEmpty? Center(
         child:  SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +47,7 @@ class AzkarOthers extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
-                  AppString.doneText,
+                  AppString.KZakarOtherFeaturesDes,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                       fontFamily: AppStyle.fontFamily,

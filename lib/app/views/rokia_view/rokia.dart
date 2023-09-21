@@ -14,8 +14,8 @@ class _RokiaScreenState extends State<RokiaScreen> {
   Widget build(BuildContext context) {
     final con = Provider.of<AzkarProvider>(context);
     return Scaffold(
-      backgroundColor: Azkary.rokiaQuranRepe.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
-      body: Azkary.rokiaQuranRepe.isNotEmpty? Center(
+      backgroundColor: Azkary.rokiaQuranRepe.isEmpty? Colors.white : const Color(0xffF7FFE5),
+      body: Azkary.rokiaQuranRepe.isEmpty? Center(
         child:  SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +54,7 @@ class _RokiaScreenState extends State<RokiaScreen> {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
-                  AppString.doneText,
+                  AppString.KZakarRokiaFeaturesDes,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                       fontFamily: AppStyle.fontFamily,

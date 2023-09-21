@@ -24,11 +24,11 @@ class _AzkarSabahState extends State<AzkarSabah> {
       //     color: Color(AppStyle.whiteColor),
       //   ),
       // ),
-      backgroundColor: Azkary.azkarSabahRepate.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
+      backgroundColor: Azkary.azkarSabahRepate.isEmpty? Colors.white : const Color(0xffF7FFE5),
       body: Hero(
         tag: 'sabah',
         transitionOnUserGestures: true,
-        child: Azkary.azkarSabahRepate.isNotEmpty? Center(
+        child: Azkary.azkarSabahRepate.isEmpty? Center(
           child:  SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

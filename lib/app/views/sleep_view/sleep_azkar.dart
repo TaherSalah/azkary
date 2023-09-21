@@ -8,8 +8,8 @@ class SleepAzkar extends StatelessWidget {
   Widget build(BuildContext context) {
     final con = Provider.of<AzkarProvider>(context);
     return Scaffold(
-        backgroundColor: Azkary.azkarSleepRepate.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
-        body:  Azkary.azkarSleepRepate.isNotEmpty? Center(
+        backgroundColor: Azkary.azkarSleepRepate.isEmpty? Colors.white : const Color(0xffF7FFE5),
+        body:  Azkary.azkarSleepRepate.isEmpty? Center(
           child:  SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +48,7 @@ class SleepAzkar extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
-                    AppString.doneText,
+                    AppString.KZakarSleepFeaturesDes,
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                         fontFamily: AppStyle.fontFamily,

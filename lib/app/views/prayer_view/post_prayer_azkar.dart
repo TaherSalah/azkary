@@ -8,8 +8,8 @@ class PrayerAzkar extends StatelessWidget {
     final con = Provider.of<AzkarProvider>(context);
 
     return Scaffold(
-        backgroundColor: Azkary.azkarPrayerRepate.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
-        body:Azkary.azkarPrayerRepate.isNotEmpty? Center(
+        backgroundColor: Azkary.azkarPrayerRepate.isEmpty? Colors.white : const Color(0xffF7FFE5),
+        body:Azkary.azkarPrayerRepate.isEmpty? Center(
           child:  SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +48,7 @@ class PrayerAzkar extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
-                    AppString.doneText,
+                    AppString.KZakarPrayerFeaturesDes,
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                         fontFamily: AppStyle.fontFamily,

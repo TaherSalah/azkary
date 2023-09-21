@@ -8,8 +8,8 @@ class AzkarMassa extends StatelessWidget {
     final con =Provider.of<AzkarProvider>(context);
     return Scaffold(
         // backgroundColor: Colors.black.withOpacity(0.1),
-        backgroundColor: Azkary.azkarMassaRepate.isNotEmpty? Colors.white : const Color(0xffF7FFE5),
-        body:Azkary.azkarMassaRepate.isNotEmpty? Center(
+        backgroundColor: Azkary.azkarMassaRepate.isEmpty? Colors.white : const Color(0xffF7FFE5),
+        body:Azkary.azkarMassaRepate.isEmpty? Center(
           child:  SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
